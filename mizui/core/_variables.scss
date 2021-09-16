@@ -344,23 +344,26 @@ $shapes-default-colors: map-merge(("step-1-gradient-bg": #7795f8,
         "span-5-bg": #6adaff), $shapes-default-colors);
 
 $shapes-light-colors: ("step-1-gradient-bg": #b2cbe1,
-        "step-2-gradient-bg": #f6f9fc,
-        "step-3-gradient-bg": #f6f9fc,
-        "span-1-bg": #b4cce1,
-        "span-2-bg": #c5dbef,
-        "span-3-bg": #b9d5ed,
-        "span-4-bg": #74e4a2,
-        "span-5-bg": #008169) !default;
+    "step-2-gradient-bg": #f6f9fc,
+    "step-3-gradient-bg": #f6f9fc,
+    "span-1-bg": #b4cce1,
+    "span-2-bg": #c5dbef,
+    "span-3-bg": #b9d5ed,
+    "span-4-bg": #74e4a2,
+    "span-5-bg": #008169) !default;
 
 $shapes-dark-colors: ("step-1-gradient-bg": #32325d,
-        "step-2-gradient-bg": #32325d,
-        "step-3-gradient-bg": #32325d,
-        "span-1-bg": #2e2e57,
-        "span-2-bg": #2b2b58,
-        "span-3-bg": #25254d,
-        "span-4-bg": #d782d9,
-        "span-5-bg": #008169) !default;
+    "step-2-gradient-bg": #32325d,
+    "step-3-gradient-bg": #32325d,
+    "span-1-bg": #2e2e57,
+    "span-2-bg": #2b2b58,
+    "span-3-bg": #25254d,
+    "span-4-bg": #d782d9,
+    "span-5-bg": #008169) !default;
 
+
+
+$theme-color: $rich-blue;
 
 // Translucent color variations
 $translucent-color-opacity: .6 !default;
@@ -400,13 +403,11 @@ $section-colors: ("primary": $body-bg,
     "darker": $darker) !default;
 
 // Links
-
-$link-color: $current !default;
+$link-base-color: $theme-color !default;
 $link-decoration: none !default;
 $link-shade-percentage: 20% !default;
-$link-hover-color: shift-color($link-color, $link-shade-percentage) !default;
-// $link-hover-color: darken($link-color, 15%);
-$link-hover-decoration: none !default;
+$link-hover-font-style: italic !default;
+
 $stretched-link-pseudo-element: after !default;
 $stretched-link-z-index: 1 !default;
 
@@ -807,6 +808,8 @@ $input-btn-border-width: 1px !default;
 
 // Buttons
 
+$button-base-color: $theme-color !default;
+
 $btn-padding-y: $input-btn-padding-y !default;
 $btn-padding-x: $input-btn-padding-x+0.5 !default;
 $btn-font-size: $font-size-base !default;
@@ -1045,18 +1048,28 @@ $navbar-light-toggler-border-color: transparent !default;
 
 // Alerts
 
+$alert-base-color: $theme-color !default;
 $alert-padding-y: 1rem !default;
 $alert-padding-x: 1.5rem !default;
 $alert-padding-x-dismiss: 2rem !default;
 $alert-padding-cross: $alert-padding-y/2 !default;
 $alert-border-radius: $border-radius !default;
+$alert-margin-bottom: 0 !default;
+$alert-border-width: 0 !default;
 
 $alert-margin-right: 1rem;
 $alert-margin-left: 1rem;
 
+$min-contrast-ratio: 4.5 !default;
+$alert-bg-scale: 10% !default;
+// $alert-border-scale: -70% !default;
+$alert-color-scale: -80% !default;
 $alert-bg-level: -2 !default;
 $alert-border-level: -2 !default;
 $alert-color-level: 0 !default;
+$alert-font-weight: $font-weight-medium !default;
+$alert-link-font-weight: bold !default;
+$alert-text-align: center !default;
 
 
 // List group

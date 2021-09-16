@@ -1,20 +1,33 @@
+// Buttons
+
+// Local Variables
+$button-background: shift-color($button-base-color, -10%);
+$button-background-hover: shift-color($button-base-color, 10%);
+$button-color-border: shift-color($button-base-color, 30%);
+$button-color: shift-color($button-base-color, -90%);
+
+@if (contrast-ratio($button-background, $button-color) < $min-contrast-ratio) {
+  $button-color: mix($button-base-color, color-contrast($button-background, white, black, $min-contrast-ratio), abs(10%));
+}
+
 .btn,
 button {
   display: inline-block;
   // font-variation-settings: "wght"600;
   font-weight: $btn-font-weight;
-  color: $gray-100;
-  background-color: $ncrypto-blau;
+  color: $button-color;
+  background-color: $button-background;
   text-align: center;
   vertical-align: middle;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: $btn-border-width solid transparent;
+  // -webkit-user-select: none;
+  // -ms-user-select: none;
+  // user-select: none;
+  border: $btn-border-width solid $button-color-border;
   padding: $btn-padding-y $btn-padding-x;
   font-size: $btn-font-size;
-  line-height: $input-btn-line-height;
-  border-radius: 0.25rem;
+  // line-height: $input-btn-line-height;
+  line-height: $btn-line-height;
+  border-radius: $btn-border-radius;
   transition: all 0.15s ease-in-out;
 
   //Btn Content format
@@ -34,8 +47,9 @@ button {
 
   &:hover {
     transform: translateY(-2px);
-    text-decoration: none;
-    background-color: darken($color: $primary, $amount: 10%);
+    // text-decoration: none;
+    color: $button-color;
+    background-color: $button-background-hover;
   }
 }
 
@@ -52,26 +66,26 @@ button {
   }
 }
 
-@each $col,
-$val in $button-color-palette {
+// @each $col,
+// $val in $button-color-palette {
 
-  // For Background Buttons
-  [data-bg=#{$col}] {
-    background-color: $val;
+//   // For Background Buttons
+//   [data-bg=#{$col}] {
+//     background-color: $val;
 
-    &:hover {
-      background-color: darken($color: $val, $amount: 10%);
-    }
-  }
+//     &:hover {
+//       background-color: darken($color: $val, $amount: 10%);
+//     }
+//   }
 
-  // For Outlined Buttons
-  [data-out-bg=#{$col}] {
-    border-color: $val;
-    color: $val;
+//   // For Outlined Buttons
+//   [data-out-bg=#{$col}] {
+//     border-color: $val;
+//     color: $val;
 
-    &:hover {
-      color: $black;
-      background-color: $val;
-    }
-  }
-}
+//     &:hover {
+//       color: $black;
+//       background-color: $val;
+//     }
+//   }
+// }

@@ -1,0 +1,49 @@
+// Alert styling
+
+// Local Variables
+$alert-background: shift-color($alert-base-color, 10%);
+$alert-color-border: shift-color($alert-base-color, 30%);
+$alert-color: shift-color($alert-base-color, $alert-color-scale);
+
+@if (contrast-ratio($alert-background, $alert-color) < $min-contrast-ratio) {
+  $alert-color: mix($alert-base-color, color-contrast($alert-background, white, black, $min-contrast-ratio), abs($alert-bg-scale));
+}
+
+.alert {
+  position: relative;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-margin-bottom;
+  border: $alert-border-width solid transparent;
+  font-weight: $alert-font-weight;
+  // @include border-radius($alert-border-radius);
+  text-align: $alert-text-align;
+
+  color: $alert-color;
+  background-color: $alert-background;
+  border-color: $alert-color-border;
+
+  a {
+    // @include alert-variant($alert-background, $alert-border, $alert-color);
+    color: shift-color($alert-color, 15%);
+    font-weight: $alert-link-font-weight;
+
+    &:hover {
+      font-style: italic;
+      // color: darken($alert-color, 25%);
+    }
+  }
+
+  &-dismissible {
+    // padding-right: $alert-dismissible-padding-r;
+
+    // Adjust close link position
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: $stretched-link-z-index + 1;
+      padding: $alert-padding-y * 1.25 $alert-padding-x;
+    }
+  }
+
+}

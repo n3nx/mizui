@@ -1,18 +1,21 @@
+// Buttons
+
+// Local Variables
+$link-color: shift-color($link-base-color, -20%);
+$link-hover-color: shift-color($link-base-color, 20%);
+
+@if (contrast-ratio($body-bg, $link-color) < $min-contrast-ratio) {
+  $link-color: mix($link-base-color, color-contrast($body-bg, $link-color, $link-hover-color, $min-contrast-ratio), abs(10%));
+}
+
+
 a {
-  color: $current;
-  text-decoration: none;
+  color: $link-color;
+  text-decoration: $link-decoration;
 
   &:hover,
   &:focus {
-    color: darken($color: $white, $amount: 30%);
-  }
-
-  .inverted {
-    color: darken($color: $white, $amount: 30%);
-
-    &:hover,
-    &:focus {
-      color: $white;
-    }
+    color: $link-hover-color;
+    font-style: $link-hover-font-style;
   }
 }
