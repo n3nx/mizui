@@ -363,7 +363,7 @@ $shapes-dark-colors: ("step-1-gradient-bg": #32325d,
 
 
 
-$theme-color: $rich-blue;
+$theme-color: $secondary;
 
 // Translucent color variations
 $translucent-color-opacity: .6 !default;
@@ -434,7 +434,9 @@ $grid-breakpoints: (xs: 0,
 //
 // Define the maximum width of `.container` for different screen sizes.
 
-$container-max-widths: (sm: 540px,
+$container-max-widths: (
+    xs: 90vw,
+    sm: 540px,
     md: 720px,
     lg: 960px,
     xl: 1140px,

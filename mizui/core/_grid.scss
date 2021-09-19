@@ -28,7 +28,7 @@
 }
 
 @each $scrsize,
-$scrwidth in $grid-breakpoints {
+$scrwidth in $container-max-widths {
 
     @include media-breakpoint-up($scrsize) {
         .container {
@@ -48,19 +48,19 @@ $scrwidth in $grid-breakpoints {
         .col-#{$scrsize}-10,
         .col-#{$scrsize}-11,
         .col-#{$scrsize}-12,
-        .col-#{$scrsize}-off-0,
-        .col-#{$scrsize}-off-1,
-        .col-#{$scrsize}-off-2,
-        .col-#{$scrsize}-off-3,
-        .col-#{$scrsize}-off-4,
-        .col-#{$scrsize}-off-5,
-        .col-#{$scrsize}-off-6,
-        .col-#{$scrsize}-off-7,
-        .col-#{$scrsize}-off-8,
-        .col-#{$scrsize}-off-9,
-        .col-#{$scrsize}-off-10,
-        .col-#{$scrsize}-off-11,
-        .col-#{$scrsize}-off-12 {
+        .col-#{$scrsize}-o-0,
+        .col-#{$scrsize}-o-1,
+        .col-#{$scrsize}-o-2,
+        .col-#{$scrsize}-o-3,
+        .col-#{$scrsize}-o-4,
+        .col-#{$scrsize}-o-5,
+        .col-#{$scrsize}-o-6,
+        .col-#{$scrsize}-o-7,
+        .col-#{$scrsize}-o-8,
+        .col-#{$scrsize}-o-9,
+        .col-#{$scrsize}-o-10,
+        .col-#{$scrsize}-o-11,
+        .col-#{$scrsize}-o-12 {
             box-sizing: border-box;
             flex: 0 0 auto;
             padding-right: var($grid-half-gutter-width, 0.5rem);
@@ -83,7 +83,7 @@ $scrwidth in $grid-breakpoints {
         }
 
         @for $i from 0 through $grid-off {
-            .col-#{$scrsize}-off-#{$i} {
+            .col-#{$scrsize}-o-#{$i} {
                 margin-left: percentage(divide($i, $grid-columns));
             }
         }
