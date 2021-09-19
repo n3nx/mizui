@@ -1,0 +1,133 @@
+// Navbar
+// Huge inspiration from https://www.aleksandrhovhannisyan.com/blog/responsive-navbar-without-bootstrap/
+
+$navbar-toggler-color: $white;
+$navbar-color: rgba(0, 0, 0, .5);
+$navbar-height: 6vh;
+
+.navbar {
+  position: relative;
+  background-color: $navbar-color;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: 100%;
+  min-height: $navbar-height;
+  // height: $navbar-height;
+  display: flex;
+  padding: $navbar-padding-y $navbar-padding-x;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-brand {
+    margin-right: 0.5em;
+
+    img {
+      min-width: 30px;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.sticky-top {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.nav-item {
+  margin: 0.4em;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+}
+
+.navbar-toggler {
+  cursor: unset;
+  background-color: transparent;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  border: 0;
+
+  &:hover {
+    background-color: inherit;
+    color: inherit;
+  }
+}
+
+.icon-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 3px;
+  transition: background-color 0.2s ease-in-out,
+    transform 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+  background-color: $navbar-toggler-color;
+}
+
+.navbar-toggler:focus .icon-bar,
+.navbar-toggler:hover .icon-bar {
+  background-color: $navbar-toggler-color;
+}
+
+.navbar.opened .navbar-toggler .icon-bar:first-child,
+.navbar.opened .navbar-toggler .icon-bar:last-child {
+  position: absolute;
+  margin: 0;
+  width: 30px;
+}
+
+.navbar.opened .navbar-toggler .icon-bar:first-child {
+  transform: rotate(45deg);
+}
+
+.navbar.opened .navbar-toggler .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar.opened .navbar-toggler .icon-bar:last-child {
+  transform: rotate(-45deg);
+}
+
+@include media-breakpoint-down('md') {
+
+  .navbar-toggler {
+    display: flex;
+  }
+
+  #navbar-menu {
+    transition: opacity 0.2s ease-in-out,
+      visibility 0.2s ease-in-out;
+    visibility: hidden;
+    display: none;
+  }
+
+  .navbar.opened #navbar-menu {
+    visibility: visible;
+    display: flex;
+    width: 100vw;
+    min-height: 100vh - $navbar-height;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar.opened .navbar-nav {
+    flex-direction: column;
+  }
+}
