@@ -1,21 +1,26 @@
-.ncr-tag {
+// Tags
+
+.tag {
   display: inline-block;
   padding: $badge-padding-y $badge-padding-x;
-  @include font-size($badge-font-size);
-  font-variation-settings: 'wght'750;
+  // @include font-size($badge-font-size);
+  font-size: 66%;
+  // font-variation-settings: 'wght'750;
   text-transform: uppercase;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
   letter-spacing: 1px;
+  color: white;
+  font-weight: bold;
   // @include border-radius($badge-border-radius);
   // @include transition($badge-transition);
 
   padding-right: $badge-pill-padding-x;
   padding-left: $badge-pill-padding-x;
   @include border-radius($badge-pill-border-radius);
-  background-color: $flying-blue;
+  background-color: $theme-color;
   margin-right: 0.5rem;
 
   a {

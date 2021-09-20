@@ -1,0 +1,36 @@
+// Spacing types
+
+.pl {
+    $padding-intercept: 0.22;
+    $padding-slope: 0.015;
+    padding-left: ($padding-slope * 100vw) + $padding-intercept ;
+}
+.pr {
+    $padding-intercept: 0.22;
+    $padding-slope: 0.015;
+    padding-right: ($padding-slope * 100vw) + $padding-intercept ;
+}
+
+.px {
+    $padding-intercept: 0.22;
+    $padding-slope: 0.03;
+    padding-left: (($padding-slope / 2) * 100vh) + $padding-intercept;
+    padding-right: (($padding-slope / 2) * 100vh) + $padding-intercept;
+}
+
+.py {
+    $padding-intercept: 0.22;
+    $padding-slope: 0.04;
+    padding-bottom: (($padding-slope / 2) * 100vh) + $padding-intercept;
+    padding-top: (($padding-slope / 2) * 100vh) + $padding-intercept;
+}
+.pb {
+    $padding-intercept: 0.22;
+    $padding-slope: 0.03;
+    padding-bottom: ($padding-slope * 100vh) + $padding-intercept ;
+}
+.pt {
+    $padding-intercept: 0.22;
+    $padding-slope: 0.03;
+    padding-top: ($padding-slope * 100vh) + $padding-intercept ;
+}

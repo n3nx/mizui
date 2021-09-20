@@ -18,10 +18,12 @@
 @import "mizui/defaults/root";
 @import "mizui/defaults/reboot";
 @import "mizui/core/grid";
+@import "mizui/core/spacing";
 
 // Mizui Components
 @import "mizui/comps/links";
 @import "mizui/comps/buttons";
 @import "mizui/comps/alert";
 @import "mizui/comps/navbar";
-
+@import "mizui/comps/cards";
+@import "mizui/comps/tags";

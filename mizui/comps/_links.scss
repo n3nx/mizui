@@ -19,3 +19,11 @@ a {
     font-style: $link-hover-font-style;
   }
 }
+
+.trans {
+  color: inherit !important;
+
+  &:hover {
+    font-style: normal;
+  }
+}

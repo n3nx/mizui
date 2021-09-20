@@ -1,0 +1,53 @@
+// Cards
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: transparent;
+    background-clip: border-box;
+    border: 0.125rem solid $gray-700;
+    border-radius: $card-border-radius;
+    transition: 0.13s all ease;
+
+    .head {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+        .emoji {
+            border: 0.125rem solid $theme-color;
+            border-radius: 50%;
+            padding: 0.5rem;
+            font-size: 2.5rem;
+        }
+    }
+
+    .body {
+        flex: 1 1 auto;
+        padding: 1.5rem;
+
+        h4 {
+            font-size: 1.5rem;
+            margin-bottom: .5rem;
+            font-family: var(--monospace);
+        }
+
+        p {
+            font-size: 1rem;
+            padding: .35rem 0;
+            line-height: 1.75;
+        }
+    }
+
+    .foot {
+        text-align: center;
+        padding: 0 1.5rem 1.25rem;
+    }
+
+    &:hover {
+        transform: translateY(-2%);
+    }
+}
