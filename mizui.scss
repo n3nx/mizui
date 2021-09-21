@@ -30,5 +30,8 @@
 @import "mizui/comps/cards";
 @import "mizui/comps/tags";
 
+// Prefabricated Pluggable Components
+@import "mizui/prefabs/footer";
+
 // User specific application components
 @import "app/app";
