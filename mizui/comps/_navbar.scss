@@ -1,15 +1,17 @@
 // Navbar
 // Huge inspiration from https://www.aleksandrhovhannisyan.com/blog/responsive-navbar-without-bootstrap/
 
+// Local Variables
 $navbar-toggler-color: $white;
-$navbar-color: rgba(0, 0, 0, .5);
+$navbar-color: rgba(0, 0, 0, .6);
 $navbar-height: 6vh;
+$navbar-blur-radius: 10px;
 
 .navbar {
   position: relative;
   background-color: $navbar-color;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur($navbar-blur-radius);
+  -webkit-backdrop-filter: blur($navbar-blur-radius);
   width: 100%;
   min-height: $navbar-height;
   // height: $navbar-height;
@@ -21,6 +23,7 @@ $navbar-height: 6vh;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    width: 92%;
   }
 
   &-brand {
@@ -44,6 +47,7 @@ $navbar-height: 6vh;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
+  margin-top: -1px; // To prevent gaping issues
   z-index: 1030;
 }
 

@@ -363,7 +363,8 @@ $shapes-dark-colors: ("step-1-gradient-bg": #32325d,
 
 
 
-$theme-color: $secondary;
+// $theme-color: lighten($rich-blue, 10%);
+$theme-color: lighten($flying-blue, 5%);
 
 // Translucent color variations
 $translucent-color-opacity: .6 !default;
