@@ -1,13 +1,12 @@
 // Cards
 
 // Local Variables
-$card-base-color: $theme-color;
-$card-background: shift-color($card-base-color, 10%);
-$card-color-border: shift-color($card-base-color, -10%);
-$card-color: shift-color($card-base-color, $alert-color-scale);
+$card-background: shift-color($card-base-color, $card-bg-scale);
+$card-color-border: shift-color($card-base-color, $card-color-border-scale);
+$card-color: shift-color($card-base-color, $card-color-scale);
 
 @if (contrast-ratio($card-background, $card-color) < $min-contrast-ratio) {
-    $card-color: mix($card-base-color, color-contrast($card-background, white, black, $min-contrast-ratio), abs($alert-bg-scale));
+    $card-color: mix($card-base-color, color-contrast($card-background, white, black, $min-contrast-ratio), abs($card-bg-scale));
 }
 
 .card {
@@ -16,11 +15,11 @@ $card-color: shift-color($card-base-color, $alert-color-scale);
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: transparent;
+    background-color: $card-bg;
     background-clip: border-box;
-    border: 0.125rem solid $gray-700;
+    border: $card-border-width solid $card-border-color;
     border-radius: $card-border-radius;
-    transition: 0.13s all ease;
+    transition: $card-transition;
 
     .head {
         text-align: center;
@@ -29,7 +28,7 @@ $card-color: shift-color($card-base-color, $alert-color-scale);
         padding-top: 1rem;
 
         .emoji {
-            border: 0.125rem solid $card-color-border;
+            border: $card-border-width solid $card-color-border;
             border-radius: 50%;
             padding: 0.5rem;
             font-size: 2.5rem;

@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-*:focus {
+*:focus, *:focus-visible{
   outline: none;
 }
 

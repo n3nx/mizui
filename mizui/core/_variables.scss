@@ -363,8 +363,17 @@ $shapes-dark-colors: ("step-1-gradient-bg": #32325d,
 
 
 
+// Commons
+
 // $theme-color: lighten($rich-blue, 10%);
 $theme-color: lighten($flying-blue, 5%);
+// $theme-color: $orange;
+$min-contrast-ratio: 4.5 !default;
+$background-scale: -10% !default;
+$background-second-scale: 10% !default;
+$color-scale: -90% !default;
+$color-border-scale: 30% !default;
+
 
 // Translucent color variations
 $translucent-color-opacity: .6 !default;
@@ -435,8 +444,7 @@ $grid-breakpoints: (xs: 0,
 //
 // Define the maximum width of `.container` for different screen sizes.
 
-$container-max-widths: (
-    xs: 300px,
+$container-max-widths: (xs: 300px,
     sm: 540px,
     md: 720px,
     lg: 960px,
@@ -719,6 +727,8 @@ $list-inline-padding: .5rem !default;
 $mark-bg: #fcf8e3 !default;
 
 
+
+
 // Tables
 $table-cell-padding-y: .5rem !default;
 $table-cell-padding-x: .5rem !default;
@@ -811,7 +821,11 @@ $input-btn-border-width: 1px !default;
 
 // Buttons
 
-$button-base-color: $theme-color !default;
+$btn-base-color: $theme-color !default;
+$btn-bg-scale: $background-scale;
+$btn-color-border-scale: $color-border-scale;
+$btn-color-scale: $color-scale;
+
 
 $btn-padding-y: $input-btn-padding-y !default;
 $btn-padding-x: $input-btn-padding-x+0.5 !default;
@@ -1014,6 +1028,12 @@ $nav-pills-box-shadow: $btn-box-shadow !default;
 
 // Navbar
 
+$navbar-toggler-color: $white;
+$navbar-color: rgba(0, 0, 0, .6);
+$navbar-height: 6vh;
+$navbar-blur-radius: 10px;
+$navbar-width: 92%;
+
 $navbar-transition: all .15s linear !default;
 $navbar-padding-y: 0.25rem !default;
 $navbar-padding-x: 0.25rem !default;
@@ -1063,17 +1083,23 @@ $alert-border-width: 0 !default;
 $alert-margin-right: 1rem;
 $alert-margin-left: 1rem;
 
-$min-contrast-ratio: 4.5 !default;
-$alert-bg-scale: 10% !default;
-// $alert-border-scale: -70% !default;
-$alert-color-scale: -80% !default;
+$alert-bg-scale: $background-second-scale;
+$alert-color-border-scale: $color-border-scale;
+$alert-color-scale: $color-scale;
+
 $alert-bg-level: -2 !default;
 $alert-border-level: -2 !default;
 $alert-color-level: 0 !default;
+
 $alert-font-weight: $font-weight-medium !default;
 $alert-link-font-weight: bold !default;
 $alert-text-align: center !default;
 
+// Close button
+
+$close-base-color: $theme-color;
+$close-bg-scale: $background-scale;
+$close-color-scale: $color-scale;
 
 // List group
 
@@ -1154,19 +1180,23 @@ $toast-header-color: $gray-600 !default;
 $toast-header-background-color: rgba($white, .85) !default;
 $toast-header-border-color: rgba(0, 0, 0, .05) !default;
 
-// Badges
+/// Tags
+// Theme Config
+$tag-base-color: $theme-color;
+$tag-bg-scale: $background-scale;
+$tag-color-border-scale: $color-border-scale;
+$tag-color-scale: $color-scale;
+// Style Config
+$tag-font-size: 66% !default;
+$tag-font-weight: $font-weight-bold !default;
+$tag-padding-y: .35rem !default;
+// $tag-padding-x: .375rem !default;
+$tag-padding-x: .875em !default;
+$tag-border-radius: 10rem !default;
+$tag-text-transform: uppercase !default;
+$tag-line-height: 1 !default;
+$tag-margin: 0 0.5em 0 auto;
 
-$badge-font-size: 66% !default;
-$badge-font-weight: $font-weight-bold !default;
-$badge-padding-y: .35rem !default;
-$badge-padding-x: .375rem !default;
-$badge-border-radius: $border-radius !default;
-$badge-text-transfom: uppercase;
-
-$badge-pill-padding-x: .875em !default;
-$badge-pill-border-radius: 10rem !default;
-
-$badge-circle-size: 2rem;
 
 // Pagination
 
@@ -1201,14 +1231,20 @@ $pagination-disabled-border-color: $gray-300 !default;
 
 // Cards
 
+$card-base-color: $theme-color;
+$card-bg-scale: $background-scale;
+$card-color-border-scale: $color-border-scale / 3;
+$card-color-scale: $color-scale;
+
 $card-spacer-y: 1.25rem !default;
 $card-spacer-x: 1.5rem !default;
-$card-border-width: $border-width !default;
+$card-border-width: 0.125rem !default;
 $card-border-radius: $border-radius * 5 !default;
-$card-border-color: rgba($black, .05);
+$card-border-color: $gray-700;
 $card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width});
 $card-cap-bg: $gray-100 !default;
-$card-bg: $white !default;
+$card-bg: transparent !default;
+$card-transition: 0.13s all ease !default;
 
 $card-img-overlay-padding: 1.25rem !default;
 
@@ -1463,12 +1499,3 @@ $ct-danger: #d9534f !default;
 
 $ct-sidebar-bg: #f5f7f9;
 $ct-sidebar-border-color: #e6ecf1;
-
-
-// navbar
-
-$navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
-
-
-// New variables (skeleton.scss)
-$button-color-palette: $reds;

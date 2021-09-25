@@ -1,13 +1,13 @@
 // Buttons
 
 // Local Variables
-$button-background: shift-color($button-base-color, -10%);
-$button-background-hover: shift-color($button-base-color, 10%);
-$button-color-border: shift-color($button-base-color, 30%);
-$button-color: shift-color($button-base-color, -90%);
+$btn-background: shift-color($btn-base-color, $btn-bg-scale);
+$btn-background-hover: shift-color($btn-base-color, 10%);
+$btn-color-border: shift-color($btn-base-color, $btn-color-border-scale); 
+$btn-color: shift-color($btn-base-color, $btn-color-scale); 
 
-@if (contrast-ratio($button-background, $button-color) < $min-contrast-ratio) {
-  $button-color: mix($button-base-color, color-contrast($button-background, white, black, $min-contrast-ratio), abs(10%));
+@if (contrast-ratio($btn-background, $btn-color) < $min-contrast-ratio) {
+  $btn-color: mix($btn-base-color, color-contrast($btn-background, white, black, $min-contrast-ratio), abs($btn-bg-scale));
 }
 
 .btn,
@@ -15,14 +15,14 @@ button {
   display: inline-block;
   // font-variation-settings: "wght"600;
   font-weight: $btn-font-weight;
-  color: $button-color;
-  background-color: $button-background;
+  color: $btn-color;
+  background-color: $btn-background;
   text-align: center;
   vertical-align: middle;
   // -webkit-user-select: none;
   // -ms-user-select: none;
   // user-select: none;
-  border: $btn-border-width solid $button-color-border;
+  border: $btn-border-width solid $btn-color-border;
   padding: $btn-padding-y $btn-padding-x;
   font-size: $btn-font-size;
   // line-height: $input-btn-line-height;
@@ -48,8 +48,8 @@ button {
   &:hover {
     transform: translateY(-2px);
     // text-decoration: none;
-    color: $button-color;
-    background-color: $button-background-hover;
+    color: $btn-color;
+    background-color: $btn-background-hover;
     font-style: normal;
   }
 }

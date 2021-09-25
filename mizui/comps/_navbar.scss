@@ -2,10 +2,6 @@
 // Huge inspiration from https://www.aleksandrhovhannisyan.com/blog/responsive-navbar-without-bootstrap/
 
 // Local Variables
-$navbar-toggler-color: $white;
-$navbar-color: rgba(0, 0, 0, .6);
-$navbar-height: 6vh;
-$navbar-blur-radius: 10px;
 
 .navbar {
   position: relative;
@@ -23,7 +19,7 @@ $navbar-blur-radius: 10px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    width: 92%;
+    width: $navbar-width;
   }
 
   &-brand {

@@ -1,8 +1,8 @@
 // Alert styling
 
 // Local Variables
-$alert-background: shift-color($alert-base-color, 10%);
-$alert-color-border: shift-color($alert-base-color, 30%);
+$alert-background: shift-color($alert-base-color, $alert-bg-scale);
+$alert-color-border: shift-color($alert-base-color, $alert-color-border-scale);
 $alert-color: shift-color($alert-base-color, $alert-color-scale);
 
 @if (contrast-ratio($alert-background, $alert-color) < $min-contrast-ratio) {
@@ -37,7 +37,7 @@ $alert-color: shift-color($alert-base-color, $alert-color-scale);
     // padding-right: $alert-dismissible-padding-r;
 
     // Adjust close link position
-    button {
+    .close {
       position: absolute;
       top: 0;
       right: 0;

@@ -1,39 +1,36 @@
 // Tags
 
 // Local Variables
-$tag-base-color: $theme-color;
-$tag-background: shift-color($tag-base-color, -10%);
-$tag-color-border: shift-color($tag-base-color, 30%);
-$tag-color: shift-color($tag-base-color, $alert-color-scale);
+$tag-background: shift-color($tag-base-color, $tag-bg-scale);
+$tag-color-border: shift-color($tag-base-color, $tag-color-border-scale);
+$tag-color: shift-color($tag-base-color, $tag-color-scale);
 
 @if (contrast-ratio($tag-background, $tag-color) < $min-contrast-ratio) {
-  $tag-color: mix($tag-base-color, color-contrast($tag-background, white, black, $min-contrast-ratio), abs($alert-bg-scale));
+  $tag-color: mix($tag-base-color, color-contrast($tag-background, white, black, $min-contrast-ratio), abs($tag-bg-scale));
 }
 
 .tag {
   display: inline-block;
-  padding: $badge-padding-y $badge-padding-x;
-  font-size: 66%;
-  text-transform: uppercase;
-  line-height: 1;
+  padding: $tag-padding-y $tag-padding-x;
+  font-size: $tag-font-size;
+  text-transform: $tag-text-transform;
+  line-height: $tag-line-height;
   text-align: center;
   // white-space: nowrap;
   // vertical-align: baseline;
   letter-spacing: 1px;
   color: $tag-color;
-  font-weight: bold;
-  // @include transition($badge-transition);
-
-  padding-right: $badge-pill-padding-x;
-  padding-left: $badge-pill-padding-x;
-  @include border-radius($badge-pill-border-radius);
+  font-weight: $tag-font-weight;
+  // @include transition($tag-transition);
+  @include border-radius($tag-border-radius);
   background-color: $tag-background;
-  margin-right: 0.5rem;
+  margin: $tag-margin;
 
   &:hover {
     &:before {
       content: '#';
     }
+
     color: $tag-color !important;
   }
 
