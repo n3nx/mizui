@@ -1,69 +1,53 @@
 // Tags
 
+// Local Variables
+$tag-base-color: $theme-color;
+$tag-background: shift-color($tag-base-color, -10%);
+$tag-color-border: shift-color($tag-base-color, 30%);
+$tag-color: shift-color($tag-base-color, $alert-color-scale);
+
+@if (contrast-ratio($tag-background, $tag-color) < $min-contrast-ratio) {
+  $tag-color: mix($tag-base-color, color-contrast($tag-background, white, black, $min-contrast-ratio), abs($alert-bg-scale));
+}
+
 .tag {
   display: inline-block;
   padding: $badge-padding-y $badge-padding-x;
-  // @include font-size($badge-font-size);
   font-size: 66%;
-  // font-variation-settings: 'wght'750;
   text-transform: uppercase;
   line-height: 1;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
+  // white-space: nowrap;
+  // vertical-align: baseline;
   letter-spacing: 1px;
-  color: white;
+  color: $tag-color;
   font-weight: bold;
-  // @include border-radius($badge-border-radius);
   // @include transition($badge-transition);
 
   padding-right: $badge-pill-padding-x;
   padding-left: $badge-pill-padding-x;
   @include border-radius($badge-pill-border-radius);
-  background-color: $theme-color;
+  background-color: $tag-background;
   margin-right: 0.5rem;
-
-  a {
-    color: $gray-100 !important;
-  }
 
   &:hover {
     &:before {
       content: '#';
     }
-
-    // font-style: italic;
-    a {
-      color: $gray-200 !important;
-    }
+    color: $tag-color !important;
   }
 
-  &.featured {
-    background-color: $success;
+  // &.featured {
+  //   background-color: $success;
 
-    &:hover {
-      &:before {
-        color: $black;
-      }
-    }
+  //   &:hover {
+  //     &:before {
+  //       color: $black;
+  //     }
+  //   }
 
-    a {
-      color: $black !important;
-    }
-  }
-
-  &.priority {
-    background-color: $warning;
-
-    &:hover {
-      &:before {
-        content: '#!/';
-        color: $black;
-      }
-    }
-
-    a {
-      color: $black !important;
-    }
-  }
+  //   a {
+  //     color: $black !important;
+  //   }
+  // }
 }
