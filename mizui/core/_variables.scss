@@ -366,8 +366,8 @@ $shapes-dark-colors: ("step-1-gradient-bg": #32325d,
 // Commons
 
 // $theme-color: lighten($rich-blue, 10%);
-$theme-color: lighten($flying-blue, 5%);
-// $theme-color: $orange;
+// $theme-color: lighten($flying-blue, 5%);
+$theme-color: darken($cyan, 15%);
 $min-contrast-ratio: 4.5 !default;
 $background-scale: -10% !default;
 $background-second-scale: 10% !default;
@@ -990,64 +990,68 @@ $noui-handle-border-radius: 100% !default;
 $noui-origin-border-radius: 2px !default;
 
 
-// Dropdown
-
-$dropdown-bg: $white !default;
-$dropdown-border-width: 0 !default;
-$dropdown-border-color: rgba($black, .15);
+// Dropdown Theming
+$dropdown-bg-scale: 88% !default;
+$dropdown-color-border-scale: $color-border-scale !default;
+$dropdown-color-scale: $color-scale !default;
+$dropdown-base-color: $theme-color !default;
+$droplink-bg-scale: 5% !default;
+$droplink-color-scale: $color-scale !default;
+$droplink-base-color: $theme-color !default;
+// Dropdown Config
 $dropdown-border-radius: $border-radius-lg !default;
+$dropdown-padding-y: 0.5rem;
+$dropdown-padding-x: 0;
+$dropdown-min-width: 12rem;
+$dropdown-text-align: left;
+$dropdown-zindex: 1500;
+
 $dropdown-box-shadow: 0 50px 100px rgba(50, 50, 93, .1),
 0 15px 35px rgba(50, 50, 93, .15),
 0 5px 15px rgba(0, 0, 0, .1);
-
-$dropdown-link-active-color: $component-active-color !default;
-$dropdown-link-active-bg: $component-active-bg !default;
-
-// Navs
-
-$nav-link-padding-y: .25rem !default;
-$nav-link-padding-x: .75rem !default;
-$nav-link-color: $gray-100 !default;
-$nav-link-disabled-color: $gray-600 !default;
-
-$nav-pills-padding-y: .75rem !default;
-$nav-pills-padding-x: 1rem !default;
-
-$nav-pills-space-x: 1rem !default;
-
-$nav-pills-bg: $white;
-$nav-pills-border-width: 1px !default;
-$nav-pills-border-color: theme-color("primary") !default;
-$nav-pills-border-radius: $border-radius !default;
-
-$nav-pills-link-color: theme-color("primary") !default;
-// $nav-pills-link-hover-color: lighten(theme-color("primary"), 10%);
-$nav-pills-link-active-color: color-yiq(theme-color("primary"));
-$nav-pills-link-active-bg: theme-color("primary") !default;
-$nav-pills-box-shadow: $btn-box-shadow !default;
+// Dropdown Items
+$dropdown-item-padding-y: .5rem !default;
+$dropdown-item-padding-x: 1rem !default;
+$dropdown-item-font-size: $font-size-sm !default;
+$dropdown-item-font-weight: 500 !default;
 
 // Navbar
 
-$navbar-toggler-color: $white;
+$navlink-bg-scale: 60%;
+$navbar-bg-scale: 80%;
+$navlink-color-border-scale: $color-border-scale;
+$navlink-color-scale: $color-scale;
+$navlink-base-color: $theme-color;
+
 $navbar-color: rgba(0, 0, 0, .6);
 $navbar-height: 6vh;
 $navbar-blur-radius: 10px;
 $navbar-width: 92%;
 
-$navbar-transition: all .15s linear !default;
+$navbar-menu-transition: all .2s ease !default;
+$navbar-iconbar-transition: all .2s ease !default;
 $navbar-padding-y: 0.25rem !default;
 $navbar-padding-x: 0.25rem !default;
 
 $navbar-nav-link-padding-x: 1rem !default;
 $navbar-nav-link-padding-y: 1rem !default;
 
-$navbar-nav-link-font-family: $font-family-base !default;
-$navbar-nav-link-font-size: .9rem !default;
-$navbar-nav-link-font-weight: 500 !default;
-$navbar-nav-link-text-transform: normal !default;
-$navbar-nav-link-letter-spacing: 0.1px !default;
-$navbar-nav-link-color: $white !default;
-$navbar-nav-link-border-radius: $border-radius !default;
+// Navs
+
+$navlink-transition: all .1s ease !default;
+// $navlink-font-family: $font-family-base !default;
+// $navlink-font-size: .9rem !default;
+// $navlink-font-weight: 500 !default;
+$navlink-text-transform: capitalize !default;
+$navlink-hover-font-style: normal !default;
+// $navlink-letter-spacing: 0.1px !default;
+$navlink-padding: .4rem !default;
+$navlink-border-radius: .3rem !default;
+$navlink-justify-content: center !default;
+
+$navitem-margin: .4rem !default;
+$navitem-text-align: center !default;
+$navitem-align-self: center !default;
 
 $navbar-dark-bg: transparent !default;
 $navbar-dark-hover-bg: rgba(255, 255, 255, .1);

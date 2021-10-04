@@ -39,9 +39,10 @@ $card-color: shift-color($card-base-color, $card-color-scale);
         flex: 1 1 auto;
         padding: 1.5rem;
 
-        h4 {
+        h1 {
             font-size: 1.5rem;
-            margin-bottom: .5rem;
+            letter-spacing: .025em;
+            margin-bottom: .5em;
             font-family: var(--monospace);
         }
 

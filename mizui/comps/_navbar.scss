@@ -2,16 +2,22 @@
 // Huge inspiration from https://www.aleksandrhovhannisyan.com/blog/responsive-navbar-without-bootstrap/
 
 // Local Variables
+$navbar-background: rgba(shift-color($navlink-base-color, $navbar-bg-scale), 0.6);
+$navlink-background: shift-color($navlink-base-color, $navlink-bg-scale);
+$navlink-color-border: shift-color($navlink-base-color, $navlink-color-border-scale);
+$navlink-color: shift-color($navlink-base-color, $navlink-color-scale);
+
+@if (contrast-ratio($navlink-background, $navlink-color) < $min-contrast-ratio) {
+  $navlink-color: mix($navlink-base-color, color-contrast($navlink-background, white, black, $min-contrast-ratio), abs($navlink-bg-scale));
+}
 
 .navbar {
   position: relative;
-  background-color: $navbar-color;
+  background-color: $navbar-background;
   backdrop-filter: blur($navbar-blur-radius);
   -webkit-backdrop-filter: blur($navbar-blur-radius);
   width: 100%;
   min-height: $navbar-height;
-  // height: $navbar-height;
-  display: flex;
   padding: $navbar-padding-y $navbar-padding-x;
 
   .container {
@@ -37,6 +43,50 @@
     margin: 0;
     list-style: none;
   }
+
+  &-toggler {
+    cursor: unset;
+    background-color: transparent;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    border: 0;
+
+    &:hover,
+    &:focus {
+      background-color: inherit;
+      color: inherit;
+
+      .icon-bar {
+        background-color: $navlink-color;
+      }
+    }
+  }
+}
+
+.nav {
+  &-item {
+    margin: $navitem-margin;
+    text-align: $navitem-text-align;
+    align-self: $navitem-align-self;
+  }
+
+  &-link {
+    justify-content: $navlink-justify-content;
+    padding: $navlink-padding;
+    text-transform: $navlink-text-transform;
+    border-radius: $navlink-border-radius;
+    transition: $navlink-transition;
+    color: $navlink-color;
+
+    &:hover {
+      color: $navlink-color;
+      background-color: $navlink-background;
+      font-style: $navlink-hover-font-style;
+    }
+  }
 }
 
 .sticky-top {
@@ -47,44 +97,15 @@
   z-index: 1030;
 }
 
-.nav-item {
-  margin: 0.4em;
-  width: 100%;
-  text-align: center;
-  align-self: center;
-}
-
-.navbar-toggler {
-  cursor: unset;
-  background-color: transparent;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0;
-  border: 0;
-
-  &:hover {
-    background-color: inherit;
-    color: inherit;
-  }
-}
-
 .icon-bar {
   display: block;
   width: 25px;
   height: 3px;
   margin: 3px;
-  transition: background-color 0.2s ease-in-out,
-    transform 0.2s ease-in-out,
-    opacity 0.2s ease-in-out;
-  background-color: $navbar-toggler-color;
+  transition: $navbar-iconbar-transition;
+  background-color: $navlink-color;
 }
 
-.navbar-toggler:focus .icon-bar,
-.navbar-toggler:hover .icon-bar {
-  background-color: $navbar-toggler-color;
-}
 
 .navbar.opened .navbar-toggler .icon-bar:first-child,
 .navbar.opened .navbar-toggler .icon-bar:last-child {
@@ -106,14 +127,12 @@
 }
 
 @include media-breakpoint-down('md') {
-
   .navbar-toggler {
     display: flex;
   }
 
   #navbar-menu {
-    transition: opacity 0.2s ease-in-out,
-      visibility 0.2s ease-in-out;
+    transition: $navbar-menu-transition;
     visibility: hidden;
     display: none;
   }
@@ -123,7 +142,7 @@
     display: flex;
     width: 100vw;
     min-height: 100vh - $navbar-height;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
   }
 
