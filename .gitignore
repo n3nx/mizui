@@ -791,3 +791,6 @@ $RECYCLE.BIN/
 # For testing only, to be released in future versions
 *.html
 *.css
+
+# Mizui Specific Ignores
+app/
