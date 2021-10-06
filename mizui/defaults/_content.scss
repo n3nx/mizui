@@ -1,0 +1,372 @@
+// Local Variable
+$content-background: shift-color(shift-color($dropdown-base-color, $dropdown-bg-scale), (-100% + $dropdown-bg-scale));
+$content-color: shift-color($dropdown-base-color, $dropdown-color-scale);
+
+$content-dk-background: shift-color($droplink-base-color, $droplink-bg-scale);
+$content-dk-color: shift-color($droplink-base-color, $droplink-color-scale);
+
+@if (contrast-ratio($content-dk-background, $content-dk-color) < $min-contrast-ratio) {
+    $content-dk-color: mix($droplink-base-color, color-contrast($content-dk-background, white, black, $min-contrast-ratio), abs($droplink-bg-scale));
+}
+
+@if (contrast-ratio($content-background, $content-color) < $min-contrast-ratio) {
+    $content-color: mix($dropdown-base-color, color-contrast($content-background, white, black, $min-contrast-ratio), abs($dropdown-bg-scale));
+}
+
+article {
+    header {
+        .title {
+            padding: 1em 0 .5em;
+            font-weight: 400;
+            font-size: 1.75em;
+        }
+
+        .subtitle {
+            color: $gray-300;
+            font: 0.85em/1.35 var(--mono);
+            letter-spacing: -.025em;
+            padding: .2em 0 .8em;
+        }
+    }
+
+
+    color: $white;
+    max-width: 40em;
+    margin: 1em auto;
+    padding: 0 .62em 1em;
+    font: 1.2em/1.62 var(--sans);
+
+
+    // p {
+    //     word-wrap: break-word;
+    //     overflow-wrap: break-word !important;
+    //     hyphens: auto;
+    //     white-space: normal;
+    //     margin: 0 0 1.5em;
+    // }
+
+    p {
+        margin: 1em 0;
+    }
+
+    >p {
+        &:nth-of-type(1) {
+            border-left: 2px solid $theme-color;
+            padding-left: 1.5rem;
+            margin-top: 1em;
+            margin-bottom: 3em;
+            line-height: 2;
+        }
+    }
+
+    // h1-h6 just to make life easier. Markdown example #...######
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        // font-family: var(--mono);
+        margin: .83em 0;
+        line-height: 1.2;
+        color: $content-color;
+
+        &:hover {
+            &::before {
+                content: '\00B6';
+                font-size: 0.9em;
+                margin: -.2em .5em 0 0;
+            }
+        }
+    }
+
+    // em to highlight code. Markdown Example *hello*
+    // em {
+    //     font-style: normal;
+    //     // background-color: rgba($heroic-blue, 0.75);
+    //     background-color: $content-color;
+    //     color: $content-background;
+    //     padding: 0.4rem 0.25rem 0.15rem 0.25rem;
+    //     border-radius: 0.25rem;
+    // }
+
+    // strong to make text bold. Markdown Example **bold text**
+    // strong,
+    // b {
+    //     font-weight: 500;
+    //     color: $content-color;
+    // }
+
+    // code to add little snippets. Markdown example `@include`
+    // pre is for blockcodes. Markdown example ```#include <stdio.h>```
+    pre {
+        padding: 1rem 1.5rem;
+        border-radius: 0.25rem;
+        overflow-x: auto;
+        // font-size: $content-font-size/1.25;
+
+        code {
+            font-family: var(--mono);
+            letter-spacing: -.022em;
+            white-space: pre-wrap;
+            line-height: 1.18;
+        }
+    }
+
+    // hr makes borders between sections. Markdown example ---
+    hr {
+        border-top: 4px solid $theme-color;
+        width: 20%;
+    }
+
+    // // ul needed for Bullet Points. MD example * *list_name*:List 1
+    // ul {
+    //     list-style-type: none;
+    //     padding: 0;
+    //     // font-size: $content-font-size;
+    //     margin: 0 0 1.5em 1.25rem;
+
+    //     li {
+    //         border-bottom: 4px solid rgba($color: $info, $alpha: 0.2);
+    //         margin-bottom: .7em;
+    //         padding-bottom: .6em;
+
+    //         &:last-child {
+    //             border-bottom: none;
+    //             padding-bottom: 1em;
+    //         }
+
+    //         &:before {
+    //             content: '\00BB';
+    //             margin-right: 0.65rem;
+    //             margin-left: -1.5rem;
+    //             color: $primary;
+    //             font-size: 1.5em;
+    //         }
+    //     }
+    // }
+
+    // ol needed for Numbered Points. MD example 1. *list_name*:List 1
+    // ol {
+    //     margin: 0 0 1.5em 1.25rem;
+    //     padding: 0;
+    //     // font-size: $content-font-size;
+
+    //     li {
+    //         border-bottom: 4px solid rgba($color: $gray-300, $alpha: 0.2);
+    //         margin-bottom: .8em;
+    //         padding-bottom: .7em;
+
+    //         &:last-child {
+    //             border-bottom: none;
+    //             padding-bottom: 1em;
+    //         }
+    //     }
+    // }
+
+    // Blockquotes to add certain info.
+    blockquote {
+        text-align: center;
+        // line-height: 1.3;
+        padding: 1.3rem 1rem;
+        // color: $dodger-blue;
+        color: $content-dk-color;
+        font-family: var(--mono);
+        font-size: 1.25em;
+
+        &::before {
+            content: '\201C';
+            font-size: 1.5em;
+        }
+
+        &::after {
+            content: '\201E';
+            font-size: 1.5em;
+        }
+    }
+
+    // table with contents.
+    table {
+        width: 100%;
+        padding: 1.5rem 0;
+
+        thead th {
+            padding-top: $table-head-spacer-y;
+            padding-bottom: $table-head-spacer-y/1.5;
+            text-transform: $table-head-text-transform;
+            // letter-spacing: $table-head-letter-spacing;
+            letter-spacing: 3px;
+            border-bottom: $table-border-width solid $table-border-color;
+            color: $content-dk-color;
+        }
+
+        td,
+        th {
+            // font-size: $content-font-size/1.35;
+            white-space: nowrap;
+        }
+
+        tr {
+            &:first-child {
+                td {
+                    padding: 0.8em 0;
+                }
+            }
+        }
+
+        tr td {
+            padding: 0.25em 0;
+            vertical-align: middle;
+        }
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        // padding: 1rem 0;
+        padding: 0.5rem;
+        min-width: 10vw;
+        max-width: 50vw;
+        opacity: 0.75;
+        border-radius: 1rem;
+        border: 1.5px solid transparent;
+
+        &:hover {
+            border-radius: 1rem;
+            border: 1.5px solid $content-dk-color;
+        }
+
+        @include media-breakpoint-down(md) {
+            max-width: 45vh;
+        }
+    }
+
+    // Information box, available in different colors. Md example: <aside>
+    aside {
+        background: rgba($color: $primary, $alpha: 0.13);
+        padding: 0.8em 1.2em;
+        margin-top: 1.8rem;
+        margin-bottom: 2rem;
+        border-left: 4px solid $primary;
+        color: $primary;
+        line-height: 1.4;
+        text-align: center;
+        position: relative;
+        clear: both;
+        // font-size: $content-font-size;
+
+        &::before {
+            width: 35px;
+            height: 35px;
+            display: inline-flex;
+            justify-content: center;
+            position: absolute;
+            left: -1.2rem;
+        }
+
+        &[data-color="success"] {
+            background: rgba($color: $success, $alpha: 0.13);
+            border-left: 4px solid $success;
+            color: $success;
+
+            &::before {
+                content: '+';
+                color: $black;
+                font-size: 1.6rem;
+                font-variation-settings: 'wght'750;
+                background: darken($color: $success, $amount: 20%);
+                border-radius: 50%;
+                align-items: center;
+                top: -.8rem;
+            }
+        }
+
+        &[data-color="alert"] {
+            background: rgba($color: $warning, $alpha: 0.13);
+            border-left: 4px solid $warning;
+            color: $warning;
+
+            &::before {
+                content: '!';
+                color: $black;
+                background: darken($color: $warning, $amount: 20%);
+                align-items: flex-end;
+                top: -1rem;
+                font-variation-settings: 'wght'750;
+                font-size: 1.5rem;
+                -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+                clip-path: polygon(50% 0, 0 100%, 100% 100%);
+            }
+        }
+    }
+
+    // To show notices and bulletin info.
+    summary {
+        margin: 40px 0;
+        padding: 4rem 2rem 0.6rem 2rem;
+        background: $darker;
+        border-radius: 1rem;
+        position: relative;
+        border-top: 0.25rem dashed $success;
+        clear: both;
+        pointer-events: none;
+
+        h4 {
+            margin-top: 0;
+            font-weight: 400;
+            color: $success;
+            font-family: var(--mono);
+
+            &::before {
+                content: '\2192 ';
+            }
+        }
+
+        p {
+            padding-left: 2rem;
+            padding-top: .5rem;
+        }
+
+        a {
+            pointer-events: auto;
+        }
+
+        footer {
+            padding-top: 1rem;
+            text-align: right;
+            right: .4rem;
+            top: .4rem;
+        }
+    }
+
+    // Represents filename of code taken from. Md ex <p data-filename>
+    p[data-filename] {
+        font-family: var(--mono);
+        color: $tertiary;
+        text-align: right;
+        margin-bottom: .5em;
+        font-size: 1.1em;
+
+        &::before {
+            content: "\2193 \00a0";
+            color: $tertiary;
+        }
+    }
+
+    // Centers the text. Represents short line quotes. Md ex <p data-center>
+    p[data-center] {
+        margin-top: 4rem;
+        // font-size: $content-font-size;
+        text-align: center;
+    }
+
+    // Footnotes section.
+    section {
+        font-size: 0.85em !important;
+
+        ol>li>p {
+            font-size: 0.85rem !important;
+        }
+    }
+}
