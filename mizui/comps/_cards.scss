@@ -15,7 +15,8 @@ $card-color: shift-color($card-base-color, $card-color-scale);
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: $card-bg;
+    // background-color: $card-bg;
+    // backdrop-filter: blur($navbar-blur-radius);
     background-clip: border-box;
     border: $card-border-width solid $card-border-color;
     border-radius: $card-border-radius;
@@ -30,7 +31,7 @@ $card-color: shift-color($card-base-color, $card-color-scale);
         .emoji {
             border: $card-border-width solid $card-color-border;
             border-radius: 50%;
-            padding: 0.5rem;
+            padding: .5rem;
             font-size: 2.5rem;
         }
     }

@@ -59,17 +59,16 @@ $eerie-black: #1E1E1E;
 $cynical-black: #171717;
 
 //Shades
-$blue: $ncrypto-blau !default;
-$indigo: $flying-blue !default;
-$purple: #7C0C82 !default;
-$pink: #F518FF !default;
-$red: #F6292B !default;
-$orange: #F95E00 !default;
-$yellow: #BC9B1B !default;
-$green: #9A7B53 !default;
-$teal: $sea-blue !default;
-$mauve: #86868C !default;
-$cyan: #2bffc6 !default;
+$blue: #4589ff !default;
+$indigo: $ncrypto-blau !default;
+$purple: #a56eff !default;
+$pink: #ee538b !default;
+$red: #fa4d56 !default;
+$orange: #c87133 !default;
+$yellow: #b28600 !default;
+$green: #24a148 !default;
+$teal: #009d9a !default;
+$cyan: #1192e8 !default;
 
 $colors: ("blue": $blue,
     "indigo": $indigo,
@@ -366,8 +365,7 @@ $shapes-dark-colors: ("step-1-gradient-bg": #32325d,
 // Commons
 
 // $theme-color: lighten($rich-blue, 10%);
-// $theme-color: lighten($flying-blue, 5%);
-$theme-color: darken($cyan, 15%);
+$theme-color: $cyan-400;
 $min-contrast-ratio: 4.5 !default;
 $background-scale: -10% !default;
 $background-second-scale: 10% !default;
@@ -540,20 +538,6 @@ $aspect-ratios: ("1x1": 100%,
     "16x9": calc(9 / 16 * 100%),
     "21x9": calc(9 / 21 * 100%)) !default;
 
-// Fonts
-// @include ncrypto-fonts("global");
-// @include ncrypto-fonts("sf");
-// @include ncrypto-fonts("ncrypto-c1");
-// @include ncrypto-fonts("ncrypto-1337");
-
-// @include ncrypto-fonts("interface");
-// @include ncrypto-fonts("space-grotesk");
-
-// @include ncrypto-fonts("ncrypto-c2");
-// @include ncrypto-fonts("ncrypto-c3");
-
-// $font-family-glyphs: 'Ncrypto-1337',
-// 'Space Mono' !default;
 
 // stylelint-disable value-keyword-case
 $font-family-sans-serif: system-ui,
@@ -708,7 +692,7 @@ $blockquote-margin-y: $spacer !default;
 
 // Horizontal Rule <hr>
 $hr-border-color: $theme-color;
-$hr-border-width: $border-width !default;
+$hr-border-width: $border-width * 4 !default;
 
 $hr-margin-y: 2.5em !default;
 $hr-color: inherit !default;

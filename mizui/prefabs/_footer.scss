@@ -26,11 +26,7 @@ $foot-list-color: $gray-200;
     font-size: 1rem;
     color: shift-color($theme-color, -10%);
     margin-bottom: 10px;
-    // pointer-events: none;
-    cursor: default;
-    // text-decoration: none;
     text-transform: uppercase;
-    width: 100%;
 }
 
 .foot-end {

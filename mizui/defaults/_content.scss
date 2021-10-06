@@ -114,12 +114,8 @@ article {
     }
 
     // hr makes borders between sections. Markdown example ---
-    hr {
-        border-top: 4px solid $theme-color;
-        width: 20%;
-    }
 
-    // // ul needed for Bullet Points. MD example * *list_name*:List 1
+    // ul needed for Bullet Points. MD example * *list_name*:List 1
     // ul {
     //     list-style-type: none;
     //     padding: 0;

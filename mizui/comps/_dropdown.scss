@@ -160,7 +160,8 @@ $droplink-color: shift-color($droplink-base-color, $droplink-color-scale);
 
     &-divider {
         border-top: 1px solid $droplink-background;
-        margin: .3rem 0 !important;
+        margin: .3rem 0;
+        width: 100%;
     }
 }
 
