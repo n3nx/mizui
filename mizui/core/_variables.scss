@@ -706,10 +706,11 @@ $blockquote-small-font-size: $small-font-size !default;
 $blockquote-font-size: $font-size-base * 1.25 !default;
 $blockquote-margin-y: $spacer !default;
 
-$hr-border-color: rgba($black, .1);
+// Horizontal Rule <hr>
+$hr-border-color: $theme-color;
 $hr-border-width: $border-width !default;
 
-$hr-margin-y: $spacer * 2 !default;
+$hr-margin-y: 2.5em !default;
 $hr-color: inherit !default;
 $hr-height: $border-width !default;
 $hr-opacity: .25 !default;
