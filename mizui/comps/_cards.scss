@@ -41,7 +41,7 @@ $card-color: shift-color($card-base-color, $card-color-scale);
 
         h1 {
             font-size: 1.5rem;
-            letter-spacing: .025em;
+            letter-spacing: -.025em;
             margin-bottom: .5em;
             font-family: var(--mono);
         }
