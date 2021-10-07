@@ -372,6 +372,25 @@ $background-second-scale: 10% !default;
 $color-scale: -90% !default;
 $color-border-scale: 30% !default;
 
+$mizui-base-color: $theme-color !default;
+$mizui-bg-scale: $background-scale !default;
+$mizui-bg-scale-dark: 100% + $background-scale !default;
+$mizui-color-scale: $color-scale !default;
+
+$mizui-background: shift-color($mizui-base-color, $mizui-bg-scale) !default;
+$mizui-color: shift-color($mizui-base-color, $mizui-color-scale);
+
+$mizui-background-dark: shift-color(shift-color($mizui-base-color, $mizui-bg-scale-dark), (-100% + $mizui-bg-scale-dark)) !default;
+$mizui-color-over-dark: shift-color($mizui-base-color, $mizui-color-scale);
+
+@if (contrast-ratio($mizui-background, $mizui-color) < $min-contrast-ratio) {
+    $mizui-color: mix($mizui-base-color, color-contrast($mizui-background, white, black, $min-contrast-ratio), abs($mizui-bg-scale));
+}
+
+@if (contrast-ratio($mizui-background-dark, $mizui-color-over-dark) < $min-contrast-ratio) {
+    $mizui-color-over-dark: mix($mizui-base-color, color-contrast($mizui-background-dark, white, black, $min-contrast-ratio), abs($mizui-bg-scale-dark));
+}
+
 
 // Translucent color variations
 $translucent-color-opacity: .6 !default;
@@ -502,7 +521,8 @@ $border-widths: (1: .0625rem,
     4: .25rem,
     5: .3125rem) !default;
 
-$border-color: $gray-200 !default;
+$border-color-scale: 60% !default;
+$border-color: shift-color($mizui-background, $border-color-scale) !default;
 
 $border-radius: .25rem !default;
 $border-radius-xl: .35rem !default;
@@ -1229,7 +1249,7 @@ $card-spacer-y: 1.25rem !default;
 $card-spacer-x: 1.5rem !default;
 $card-border-width: 0.125rem !default;
 $card-border-radius: $border-radius * 5 !default;
-$card-border-color: $gray-700;
+$card-border-color: $border-color;
 $card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width});
 $card-cap-bg: $gray-100 !default;
 $card-bg: transparent !default;
