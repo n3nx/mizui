@@ -1,0 +1,53 @@
+// Jumbo
+
+// Local Variables
+$jumbo-background: shift-color($jumbo-base-color, $jumbo-bg-scale);
+$jumbo-color: shift-color($jumbo-base-color, $jumbo-color-scale);
+
+@if (contrast-ratio($jumbo-background, $jumbo-color) < $min-contrast-ratio) {
+    $jumbo-color: mix($jumbo-base-color, color-contrast($jumbo-background, white, black, $min-contrast-ratio), abs($jumbo-bg-scale));
+}
+
+.hero {
+    padding: 8em .5em;
+    text-align: center;
+    background: $jumbo-background;
+
+    h1,
+    h2 {
+        font-size: $display2-size;
+        color: $jumbo-color;
+        // font-weight: 400;
+    }
+
+    p {
+        padding-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .links {
+        padding-top: 1.5rem;
+        text-align: center;
+
+        a {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 1.5rem;
+        }
+    }
+}
+
+.torso {
+    background: linear-gradient(180deg, $jumbo-background 0%, #000000 100%);
+
+    .buckt {
+        width: 75vw;
+        margin: auto auto;
+    }
+}
+
+@include media-breakpoint-down("md") {
+    .buckt {
+        width: 95vw !important;
+    }
+}

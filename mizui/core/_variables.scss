@@ -1347,8 +1347,9 @@ $datepicker-dropdown-bg: $white !default;
 $datepicker-highlighted-bg: $datepicker-active-background !default;
 
 
-// Footer
+// Prefabricated Components
 
+// Footer
 $footer-link-font-size: .85rem !default;
 $footer-bg: theme-color("secondary") !default;
 $footer-color: $gray-600 !default;
@@ -1357,9 +1358,13 @@ $footer-link-hover-color: $gray-700 !default;
 $footer-heading-color: $gray-600 !default;
 $footer-heading-font-size: $font-size-sm !default;
 
+// Jumbo
+$jumbo-base-color: $theme-color;
+$jumbo-bg-scale: 93%;
+$jumbo-color-scale: -65%;
+
 
 // Toggle Buttons
-
 $custom-toggle-width: 52px !default;
 $custom-toggle-slider-bg: $gray-200 !default;
 $custom-toggle-checked-bg: theme-color("primary") !default;
@@ -1367,7 +1372,6 @@ $custom-toggle-border-color: $gray-400;
 
 
 // Social Buttons
-
 $facebook: #3b5998 !default;
 $facebook-states: darken($facebook, 5%) !default;
 $twitter: #55acee !default;
