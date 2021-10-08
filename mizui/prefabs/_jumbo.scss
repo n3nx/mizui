@@ -15,13 +15,13 @@ $jumbo-color: shift-color($jumbo-base-color, $jumbo-color-scale);
 
     h1,
     h2,
-    h4 {
+    h3 {
         font-size: $display2-size;
         color: $jumbo-color;
         font-weight: 300;
     }
 
-    h4 {
+    h3 {
         margin: 1em 0 0;
         font-size: $display4-size;
     }
