@@ -1199,12 +1199,14 @@ $tag-color-scale: $color-scale;
 $tag-font-size: 66% !default;
 $tag-font-weight: $font-weight-bold !default;
 $tag-padding-y: .35rem !default;
-// $tag-padding-x: .375rem !default;
 $tag-padding-x: .875em !default;
+$tag-mobile-padding-y: .5rem !default;
+$tag-mobile-padding-x: 1.25em !default;
 $tag-border-radius: 10rem !default;
 $tag-text-transform: uppercase !default;
 $tag-line-height: 1 !default;
 $tag-margin: 0 0.5em 0 auto;
+$tag-mobile-margin: .5em 0.75em 0 auto;
 
 
 // Pagination

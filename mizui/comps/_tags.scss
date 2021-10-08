@@ -33,18 +33,11 @@ $tag-color: shift-color($tag-base-color, $tag-color-scale);
 
     color: $tag-color !important;
   }
+}
 
-  // &.featured {
-  //   background-color: $success;
-
-  //   &:hover {
-  //     &:before {
-  //       color: $black;
-  //     }
-  //   }
-
-  //   a {
-  //     color: $black !important;
-  //   }
-  // }
+@include media-breakpoint-down('lg') {
+  .tag {
+    padding: $tag-mobile-padding-y $tag-mobile-padding-x;
+    margin: $tag-mobile-margin;
+  }
 }
