@@ -1,5 +1,6 @@
 .container-fluid,
 .container {
+    width: 80vw;
     margin-right: auto;
     margin-left: auto;
 }
@@ -27,6 +28,71 @@
     flex-direction: column-reverse;
 }
 
+.col.expand {
+    // flex-grow: 1;
+    // flex-basis: 0;
+    flex: 1 0;
+    max-width: 100%;
+}
+
+@for $i from 1 through $grid-columns {
+    .col-xs-#{$i} {
+        // flex-basis: percentage(divide($i, $grid-columns));
+        width: percentage(divide($i, $grid-columns));
+    }
+}
+
+@for $i from 0 through $grid-off {
+    .col-xs-o-#{$i} {
+        margin-left: percentage(divide($i, $grid-columns));
+    }
+}
+
+@if $enable-grid-attributes {
+    .start-xs {
+        justify-content: flex-start;
+        text-align: start;
+    }
+
+    .center-xs {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .end-xs {
+        justify-content: flex-end;
+        text-align: end;
+    }
+
+    .top-xs {
+        align-items: flex-start;
+    }
+
+    .middle-xs {
+        align-items: center;
+    }
+
+    .bottom-xs {
+        align-items: flex-end;
+    }
+
+    .around-xs {
+        justify-content: space-around;
+    }
+
+    .between-xs {
+        justify-content: space-between;
+    }
+
+    .first-xs {
+        order: -1;
+    }
+
+    .last-xs {
+        order: 1;
+    }
+}
+
 @each $scrsize,
 $scrwidth in $container-max-widths {
 
@@ -35,102 +101,64 @@ $scrwidth in $container-max-widths {
             width: $scrwidth;
         }
 
-        .col-#{$scrsize},
-        .col-#{$scrsize}-1,
-        .col-#{$scrsize}-2,
-        .col-#{$scrsize}-3,
-        .col-#{$scrsize}-4,
-        .col-#{$scrsize}-5,
-        .col-#{$scrsize}-6,
-        .col-#{$scrsize}-7,
-        .col-#{$scrsize}-8,
-        .col-#{$scrsize}-9,
-        .col-#{$scrsize}-10,
-        .col-#{$scrsize}-11,
-        .col-#{$scrsize}-12,
-        .col-#{$scrsize}-o-0,
-        .col-#{$scrsize}-o-1,
-        .col-#{$scrsize}-o-2,
-        .col-#{$scrsize}-o-3,
-        .col-#{$scrsize}-o-4,
-        .col-#{$scrsize}-o-5,
-        .col-#{$scrsize}-o-6,
-        .col-#{$scrsize}-o-7,
-        .col-#{$scrsize}-o-8,
-        .col-#{$scrsize}-o-9,
-        .col-#{$scrsize}-o-10,
-        .col-#{$scrsize}-o-11,
-        .col-#{$scrsize}-o-12 {
-            box-sizing: border-box;
-            flex: 0 0 auto;
-            padding-right: var($grid-half-gutter-width, 0.5rem);
-            padding-left: var($grid-half-gutter-width, 0.5rem);
-        }
-
-
-        .col-#{$scrsize} {
-            flex-grow: 1;
-            flex-basis: 0;
-            max-width: 100%;
-        }
-
         @for $i from 1 through $grid-columns {
             .col-#{$scrsize}-#{$i} {
-                // width: percentage(divide($i, $grid-columns));
-                flex-basis: percentage(divide($i, $grid-columns));
-                max-width: percentage(divide($i, $grid-columns));
+                // flex-basis: percentage(divide($i, $grid-columns));
+                width: percentage(divide($i, $grid-columns));
             }
         }
 
-        @for $i from 0 through $grid-off {
-            .col-#{$scrsize}-o-#{$i} {
-                margin-left: percentage(divide($i, $grid-columns));
+        @if $enable-grid-offsets {
+            @for $i from 0 through $grid-off {
+                .col-#{$scrsize}-o-#{$i} {
+                    margin-left: percentage(divide($i, $grid-columns));
+                }
             }
         }
 
-        .start-#{$scrsize} {
-            justify-content: flex-start;
-            text-align: start;
-        }
+        @if $enable-grid-attributes {
+            .start-#{$scrsize} {
+                justify-content: flex-start;
+                text-align: start;
+            }
 
-        .center-#{$scrsize} {
-            justify-content: center;
-            text-align: center;
-        }
+            .center-#{$scrsize} {
+                justify-content: center;
+                text-align: center;
+            }
 
-        .end-#{$scrsize} {
-            justify-content: flex-end;
-            text-align: end;
-        }
+            .end-#{$scrsize} {
+                justify-content: flex-end;
+                text-align: end;
+            }
 
-        .top-#{$scrsize} {
-            align-items: flex-start;
-        }
+            .top-#{$scrsize} {
+                align-items: flex-start;
+            }
 
-        .middle-#{$scrsize} {
-            align-items: center;
-        }
+            .middle-#{$scrsize} {
+                align-items: center;
+            }
 
-        .bottom-#{$scrsize} {
-            align-items: flex-end;
-        }
+            .bottom-#{$scrsize} {
+                align-items: flex-end;
+            }
 
-        .around-#{$scrsize} {
-            justify-content: space-around;
-        }
+            .around-#{$scrsize} {
+                justify-content: space-around;
+            }
 
-        .between-#{$scrsize} {
-            justify-content: space-between;
-        }
+            .between-#{$scrsize} {
+                justify-content: space-between;
+            }
 
-        .first-#{$scrsize} {
-            order: -1;
-        }
+            .first-#{$scrsize} {
+                order: -1;
+            }
 
-        .last-#{$scrsize} {
-            order: 1;
+            .last-#{$scrsize} {
+                order: 1;
+            }
         }
     }
-
-
 }

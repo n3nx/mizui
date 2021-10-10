@@ -1,17 +1,18 @@
 // Global settings
-
 $enable-caret: true !default;
 $enable-rounded: true !default;
-$enable-shadows: false !default;
+// $enable-shadows: false !default;
 $enable-gradients: false !default;
 $enable-transitions: true !default;
 $enable-grid-classes: true !default;
+$enable-grid-offsets: false !default;
+$enable-grid-attributes: false !default;
 $enable-print-styles: true !default;
-$enable-color-ranges: true !default;
+// $enable-color-ranges: true !default;
 $enable-negative-margins: true !default;
 
-// Color system
 
+// Color system
 // Grays
 $white: #fff !default;
 $gray-100: #E6E6E6 !default;
@@ -374,7 +375,7 @@ $color-border-scale: 30% !default;
 
 $mizui-base-color: $theme-color !default;
 $mizui-bg-scale: $background-scale !default;
-$mizui-bg-scale-dark: 100% + $background-scale !default;
+$mizui-bg-scale-dark: 100%+$background-scale !default;
 $mizui-color-scale: $color-scale !default;
 
 $mizui-background: shift-color($mizui-base-color, $mizui-bg-scale) !default;
@@ -461,12 +462,12 @@ $grid-breakpoints: (xs: 0,
 //
 // Define the maximum width of `.container` for different screen sizes.
 
-$container-max-widths: (xs: 300px,
-    sm: 540px,
+$container-max-widths: (sm: 540px,
     md: 720px,
     lg: 960px,
-    xl: 1140px,
-    xxl: 1320px) !default;
+    // xl: 1140px,
+    xl: 1320px,
+) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
