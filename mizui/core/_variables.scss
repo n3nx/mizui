@@ -1030,14 +1030,14 @@ $navlink-color-scale: $color-scale;
 $navlink-base-color: $theme-color;
 
 $navbar-color: rgba(0, 0, 0, .6);
-$navbar-height: 6vh;
+$navbar-height: 4vh;
 $navbar-blur-radius: 10px;
 $navbar-width: 92%;
 
 $navbar-menu-transition: all .2s ease !default;
 $navbar-iconbar-transition: all .2s ease !default;
-$navbar-padding-y: 0.25rem !default;
-$navbar-padding-x: 0.25rem !default;
+$navbar-padding-y: 0.75vh !default;
+$navbar-padding-x: 0.75vw !default;
 
 $navbar-nav-link-padding-x: 1rem !default;
 $navbar-nav-link-padding-y: 1rem !default;
