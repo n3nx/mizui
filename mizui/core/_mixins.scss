@@ -19,6 +19,7 @@
 
 // Utilities
 @import "mixins/utilities";
+@import "mixins/filters";
 
 // Components
 @import "mixins/alert";
@@ -41,3 +42,4 @@
 @import "mixins/clearfix";
 @import "mixins/container";
 @import "mixins/grid";
+@import "mixins/rfs";

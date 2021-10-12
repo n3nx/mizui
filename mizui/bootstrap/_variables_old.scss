@@ -745,7 +745,7 @@ $table-hover-bg-factor:       .075 !default;
 $table-hover-bg:              rgba($black, $table-hover-bg-factor) !default;
 
 $table-border-factor:         .1 !default;
-$table-border-width:          $border-width !default;
+$table-border-width:          .125em !default;
 $table-border-color:          $border-color !default;
 
 $table-striped-order:         odd !default;

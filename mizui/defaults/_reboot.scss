@@ -40,7 +40,7 @@ body {
   text-rendering: optimizeSpeed;
   background-color: var(--body-bg);
   color: var(--body-fg);
-  font: 1rem/1.5 var(--sans);
+  font: 1rem/1.5 $font-family-sans-serif;
 }
 
 /* A elements that don't have a class get default styles */

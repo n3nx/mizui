@@ -14,8 +14,6 @@ $navlink-color: shift-color($navlink-base-color, $navlink-color-scale);
 .navbar {
   position: relative;
   background-color: $navbar-background;
-  backdrop-filter: blur($navbar-blur-radius);
-  -webkit-backdrop-filter: blur($navbar-blur-radius);
   width: 100%;
   min-height: $navbar-height;
   padding: $navbar-padding-y $navbar-padding-x;

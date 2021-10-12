@@ -1,0 +1,10 @@
+// Various Utility Classes
+
+// For blurring things up
+.backdrop {
+    @include backdrop-blur($navbar-blur-radius);
+}
+
+.text-align-center {
+    text-align: center;
+}

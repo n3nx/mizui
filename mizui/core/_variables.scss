@@ -606,8 +606,8 @@ Consolas,
 "Andale Mono",
 "Courier New",
 monospace !default;
-$font-family-base: $font-family-sans-serif;
-$font-family-code: $font-family-monospace;
+$font-family-base: var(--sans);
+$font-family-code: var(--mono);
 // stylelint-enable value-keyword-case
 
 $font-size-root: null !default;
@@ -682,10 +682,10 @@ $heading-section-text-transform: uppercase !default;
 // $display3-size: 4.5rem !default;
 // $display4-size: 3.5rem !default;
 
-$display1-size: 3.3rem !default;
+$display1-size: 3rem !default;
 $display2-size: 2.75rem !default;
-$display3-size: 2.1875rem !default;
-$display4-size: 1.6275rem !default;
+$display3-size: 2.25rem !default;
+$display4-size: 1.75rem !default;
 
 $display1-weight: $font-weight-light !default;
 $display2-weight: $font-weight-light !default;

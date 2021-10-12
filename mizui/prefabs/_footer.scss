@@ -23,7 +23,7 @@ $foot-list-color: $gray-200;
     letter-spacing: 5px;
     font-weight: 500;
     line-height: 1.3;
-    font-size: 1rem;
+    font-size: 1em;
     color: shift-color($theme-color, -10%);
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -34,7 +34,7 @@ $foot-list-color: $gray-200;
     text-align: center;
     padding: 2.5rem 0;
     margin-top: 1.5rem;
-    font-size: .875rem;
+    font-size: .875em;
 }
 
 .foot-list {
@@ -47,7 +47,7 @@ $foot-list-color: $gray-200;
 
     li>a {
         color: $foot-list-color;
-        font-size: 0.9rem;
+        font-size: .9em;
     }
 }
 
