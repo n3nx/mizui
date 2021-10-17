@@ -2,7 +2,7 @@
 
 // Local Variables
 $card-background: shift-color($card-base-color, $card-bg-scale);
-$card-color-border: shift-color($card-base-color, $card-color-border-scale);
+$card-color-head-border: shift-color($card-base-color, $card-color-head-border-scale);
 $card-color: shift-color($card-base-color, $card-color-scale);
 
 @if (contrast-ratio($card-background, $card-color) < $min-contrast-ratio) {
@@ -29,7 +29,7 @@ $card-color: shift-color($card-base-color, $card-color-scale);
         padding-top: 1rem;
 
         .emoji {
-            border: $card-border-width solid $card-color-border;
+            border: $card-border-width solid $card-color-head-border;
             border-radius: 50%;
             padding: .5rem;
             font-size: 2.5rem;

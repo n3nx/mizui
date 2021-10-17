@@ -522,7 +522,7 @@ $border-widths: (1: .0625rem,
     4: .25rem,
     5: .3125rem) !default;
 
-$border-color-scale: 60% !default;
+$border-color-scale: 40% !default;
 $border-color: shift-color($mizui-background, $border-color-scale) !default;
 
 $border-radius: .25rem !default;
@@ -1245,7 +1245,7 @@ $pagination-disabled-border-color: $gray-300 !default;
 
 $card-base-color: $theme-color;
 $card-bg-scale: $background-scale;
-$card-color-border-scale: $color-border-scale / 3;
+$card-color-head-border-scale: $color-border-scale * 1.5;
 $card-color-scale: $color-scale;
 
 $card-spacer-y: 1.25rem !default;

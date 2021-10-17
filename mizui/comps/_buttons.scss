@@ -71,6 +71,7 @@ button {
   background: $btn-arrow-bg !important;
   color: $btn-arrow-color !important;
   border: none;
+  text-align: left;
 
   &::after {
     content: '\2192';

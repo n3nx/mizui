@@ -1,6 +1,7 @@
 // Spacing types
 
 $padding-default: $spacer * 1.25;
+$margin-default: $spacer * 1.5;
 
 .pt {
     @include padding-top($padding-default);
@@ -29,5 +30,27 @@ $padding-default: $spacer * 1.25;
 }
 
 .mt {
-    @include margin-top($padding-default);
+    @include margin-top($margin-default);
+}
+
+.mb {
+    @include margin-bottom($margin-default);
+}
+
+.ml {
+    @include margin-left($margin-default);
+}
+
+.mr {
+    @include margin-right($margin-default);
+}
+
+.mx {
+    @include margin-left($margin-default);
+    @include margin-right($margin-default);
+}
+
+.my {
+    @include margin-top($margin-default);
+    @include margin-bottom($margin-default);
 }
