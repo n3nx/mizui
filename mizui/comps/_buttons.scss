@@ -3,8 +3,13 @@
 // Local Variables
 $btn-background: shift-color($btn-base-color, $btn-bg-scale);
 $btn-background-hover: shift-color($btn-base-color, 10%);
-$btn-color-border: shift-color($btn-base-color, $btn-color-border-scale); 
-$btn-color: shift-color($btn-base-color, $btn-color-scale); 
+$btn-color-border: shift-color($btn-base-color, $btn-color-border-scale);
+$btn-color: shift-color($btn-base-color, $btn-color-scale);
+
+$btn-outline-color: $btn-background;
+$btn-arrow-color: $btn-background;
+$btn-outline-bg: transparent;
+$btn-arrow-bg: transparent;
 
 @if (contrast-ratio($btn-background, $btn-color) < $min-contrast-ratio) {
   $btn-color: mix($btn-base-color, color-contrast($btn-background, white, black, $min-contrast-ratio), abs($btn-bg-scale));
@@ -13,10 +18,9 @@ $btn-color: shift-color($btn-base-color, $btn-color-scale);
 .btn,
 button {
   display: inline-block;
-  // font-variation-settings: "wght"600;
   font-weight: $btn-font-weight;
   color: $btn-color;
-  background-color: $btn-background;
+  background: $btn-background;
   text-align: center;
   vertical-align: middle;
   // -webkit-user-select: none;
@@ -28,7 +32,7 @@ button {
   // line-height: $input-btn-line-height;
   line-height: $btn-line-height;
   border-radius: $btn-border-radius;
-  transition: all 0.15s ease-in-out;
+  transition: all .13s ease;
 
   //Btn Content format
   position: relative;
@@ -49,44 +53,35 @@ button {
     transform: translateY(-2px);
     // text-decoration: none;
     color: $btn-color;
-    background-color: $btn-background-hover;
+    background: $btn-background-hover;
     font-style: normal;
   }
 }
 
-// Top bar navigation buttons.
-.nav-btn {
-  color: black !important;
-  padding: 0 0.5rem !important;
-  border-radius: 0.5rem !important;
-  font-weight: 400 !important;
-  margin-top: 0.5rem !important;
+.btn-outline {
+  background: $btn-outline-bg;
+  color: $btn-outline-color;
 
-  i {
-    font-size: 1.5rem;
+  &:hover {
+    transform: none;
   }
 }
 
-// @each $col,
-// $val in $button-color-palette {
+.btn-arrow {
+  background: $btn-arrow-bg !important;
+  color: $btn-arrow-color !important;
+  border: none;
 
-//   // For Background Buttons
-//   [data-bg=#{$col}] {
-//     background-color: $val;
+  &::after {
+    content: '\2192';
+    margin-left: .25em;
+  }
 
-//     &:hover {
-//       background-color: darken($color: $val, $amount: 10%);
-//     }
-//   }
+  &:hover {
+    transform: none;
 
-//   // For Outlined Buttons
-//   [data-out-bg=#{$col}] {
-//     border-color: $val;
-//     color: $val;
-
-//     &:hover {
-//       color: $black;
-//       background-color: $val;
-//     }
-//   }
-// }
+    &::after {
+      margin-left: .5em;
+    }
+  }
+}

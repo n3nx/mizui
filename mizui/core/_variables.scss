@@ -971,7 +971,7 @@ $form-feedback-invalid-color: theme-color("warning") !default;
 
 // Allows for customizing button radius independently from global border radius
 
-$btn-border-radius: $input-border-radius !default;
+$btn-border-radius: $input-border-radius-lg !default;
 $btn-border-radius-xl: $input-border-radius-xl !default;
 $btn-border-radius-lg: $input-border-radius-lg !default;
 $btn-border-radius-sm: $input-border-radius !default;
