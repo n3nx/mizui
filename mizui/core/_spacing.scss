@@ -1,36 +1,33 @@
 // Spacing types
 
-.pl {
-    $padding-intercept: 0.22;
-    $padding-slope: 0.015;
-    padding-left: ($padding-slope * 100vw) + $padding-intercept ;
+$padding-default: $spacer * 1.25;
+
+.pt {
+    @include padding-top($padding-default);
 }
+
+.pb {
+    @include padding-bottom($padding-default);
+}
+
+.pl {
+    @include padding-left($padding-default);
+}
+
 .pr {
-    $padding-intercept: 0.22;
-    $padding-slope: 0.015;
-    padding-right: ($padding-slope * 100vw) + $padding-intercept ;
+    @include padding-right($padding-default);
 }
 
 .px {
-    $padding-intercept: 0.22;
-    $padding-slope: 0.03;
-    padding-left: (($padding-slope / 2) * 100vh) + $padding-intercept;
-    padding-right: (($padding-slope / 2) * 100vh) + $padding-intercept;
+    @include padding-left($padding-default);
+    @include padding-right($padding-default);
 }
 
 .py {
-    $padding-intercept: 0.22;
-    $padding-slope: 0.04;
-    padding-bottom: (($padding-slope / 2) * 100vh) + $padding-intercept;
-    padding-top: (($padding-slope / 2) * 100vh) + $padding-intercept;
+    @include padding-top($padding-default);
+    @include padding-bottom($padding-default);
 }
-.pb {
-    $padding-intercept: 0.22;
-    $padding-slope: 0.03;
-    padding-bottom: ($padding-slope * 100vh) + $padding-intercept ;
-}
-.pt {
-    $padding-intercept: 0.22;
-    $padding-slope: 0.03;
-    padding-top: ($padding-slope * 100vh) + $padding-intercept ;
+
+.mt {
+    @include margin-top($padding-default);
 }
