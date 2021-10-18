@@ -1,0 +1,14 @@
+@mixin ncrypto-fonts($family) {
+    @import url("https://static.ncrypto.net/fonts/#{$family}/font.css");
+}
+
+@mixin toggle-ligatures($state) {
+    @if $state=="off" {
+        font-feature-settings: "liga" off;
+        font-variant-ligatures: no-common-ligatures;
+    }
+    @else {
+        font-feature-settings: "liga" on;
+        font-variant-ligatures: normal;
+    }
+}

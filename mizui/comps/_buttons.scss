@@ -1,0 +1,77 @@
+.btn,
+button {
+  display: inline-block;
+  // font-variation-settings: "wght"600;
+  font-weight: $btn-font-weight;
+  color: $gray-100;
+  background-color: $ncrypto-blau;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: $btn-border-width solid transparent;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  line-height: $input-btn-line-height;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease-in-out;
+
+  //Btn Content format
+  position: relative;
+  text-transform: $btn-text-transform;
+  will-change: transform;
+  letter-spacing: $btn-letter-spacing;
+
+  // For Icons
+  &-icon {
+    width: 2.375rem;
+    height: 2.375rem;
+    padding: 0;
+    border-radius: 50%;
+    line-height: 2.5;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+    background-color: darken($color: $primary, $amount: 10%);
+  }
+}
+
+// Top bar navigation buttons.
+.nav-btn {
+  color: black !important;
+  padding: 0 0.5rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: 400 !important;
+  margin-top: 0.5rem !important;
+
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+@each $col,
+$val in $button-color-palette {
+
+  // For Background Buttons
+  [data-bg=#{$col}] {
+    background-color: $val;
+
+    &:hover {
+      background-color: darken($color: $val, $amount: 10%);
+    }
+  }
+
+  // For Outlined Buttons
+  [data-out-bg=#{$col}] {
+    border-color: $val;
+    color: $val;
+
+    &:hover {
+      color: $black;
+      background-color: $val;
+    }
+  }
+}

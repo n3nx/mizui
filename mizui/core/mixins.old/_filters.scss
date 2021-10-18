@@ -1,0 +1,4 @@
+@mixin inversion($level) {
+    -webkit-filter: invert($level) !important;
+    filter: invert($level) !important;
+}

@@ -1,0 +1,64 @@
+.ncr-tag {
+  display: inline-block;
+  padding: $badge-padding-y $badge-padding-x;
+  @include font-size($badge-font-size);
+  font-variation-settings: 'wght'750;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  letter-spacing: 1px;
+  // @include border-radius($badge-border-radius);
+  // @include transition($badge-transition);
+
+  padding-right: $badge-pill-padding-x;
+  padding-left: $badge-pill-padding-x;
+  @include border-radius($badge-pill-border-radius);
+  background-color: $flying-blue;
+  margin-right: 0.5rem;
+
+  a {
+    color: $gray-100 !important;
+  }
+
+  &:hover {
+    &:before {
+      content: '#';
+    }
+
+    // font-style: italic;
+    a {
+      color: $gray-200 !important;
+    }
+  }
+
+  &.featured {
+    background-color: $success;
+
+    &:hover {
+      &:before {
+        color: $black;
+      }
+    }
+
+    a {
+      color: $black !important;
+    }
+  }
+
+  &.priority {
+    background-color: $warning;
+
+    &:hover {
+      &:before {
+        content: '#!/';
+        color: $black;
+      }
+    }
+
+    a {
+      color: $black !important;
+    }
+  }
+}

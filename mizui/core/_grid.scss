@@ -1,0 +1,136 @@
+.container-fluid,
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-fluid {
+    padding-right: var($outer-margin, 2rem);
+    padding-left: var($outer-margin, 2rem);
+}
+
+.row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: var($grid-gutter-compensation, -0.5rem);
+    margin-left: var($grid-gutter-compensation, -0.5rem);
+}
+
+.row.reverse {
+    flex-direction: row-reverse;
+}
+
+.col.reverse {
+    flex-direction: column-reverse;
+}
+
+@each $scrsize,
+$scrwidth in $grid-breakpoints {
+
+    @include media-breakpoint-up($scrsize) {
+        .container {
+            width: $scrwidth;
+        }
+
+        .col-#{$scrsize},
+        .col-#{$scrsize}-1,
+        .col-#{$scrsize}-2,
+        .col-#{$scrsize}-3,
+        .col-#{$scrsize}-4,
+        .col-#{$scrsize}-5,
+        .col-#{$scrsize}-6,
+        .col-#{$scrsize}-7,
+        .col-#{$scrsize}-8,
+        .col-#{$scrsize}-9,
+        .col-#{$scrsize}-10,
+        .col-#{$scrsize}-11,
+        .col-#{$scrsize}-12,
+        .col-#{$scrsize}-off-0,
+        .col-#{$scrsize}-off-1,
+        .col-#{$scrsize}-off-2,
+        .col-#{$scrsize}-off-3,
+        .col-#{$scrsize}-off-4,
+        .col-#{$scrsize}-off-5,
+        .col-#{$scrsize}-off-6,
+        .col-#{$scrsize}-off-7,
+        .col-#{$scrsize}-off-8,
+        .col-#{$scrsize}-off-9,
+        .col-#{$scrsize}-off-10,
+        .col-#{$scrsize}-off-11,
+        .col-#{$scrsize}-off-12 {
+            box-sizing: border-box;
+            flex: 0 0 auto;
+            padding-right: var($grid-half-gutter-width, 0.5rem);
+            padding-left: var($grid-half-gutter-width, 0.5rem);
+        }
+
+
+        .col-#{$scrsize} {
+            flex-grow: 1;
+            flex-basis: 0;
+            max-width: 100%;
+        }
+
+        @for $i from 1 through $grid-columns {
+            .col-#{$scrsize}-#{$i} {
+                // width: percentage(divide($i, $grid-columns));
+                flex-basis: percentage(divide($i, $grid-columns));
+                max-width: percentage(divide($i, $grid-columns));
+            }
+        }
+
+        @for $i from 0 through $grid-off {
+            .col-#{$scrsize}-off-#{$i} {
+                margin-left: percentage(divide($i, $grid-columns));
+            }
+        }
+
+        .start-#{$scrsize} {
+            justify-content: flex-start;
+            text-align: start;
+        }
+
+        .center-#{$scrsize} {
+            justify-content: center;
+            text-align: center;
+        }
+
+        .end-#{$scrsize} {
+            justify-content: flex-end;
+            text-align: end;
+        }
+
+        .top-#{$scrsize} {
+            align-items: flex-start;
+        }
+
+        .middle-#{$scrsize} {
+            align-items: center;
+        }
+
+        .bottom-#{$scrsize} {
+            align-items: flex-end;
+        }
+
+        .around-#{$scrsize} {
+            justify-content: space-around;
+        }
+
+        .between-#{$scrsize} {
+            justify-content: space-between;
+        }
+
+        .first-#{$scrsize} {
+            order: -1;
+        }
+
+        .last-#{$scrsize} {
+            order: 1;
+        }
+    }
+
+
+}

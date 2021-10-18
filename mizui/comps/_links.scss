@@ -1,0 +1,18 @@
+a {
+  color: $current;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: darken($color: $white, $amount: 30%);
+  }
+
+  .inverted {
+    color: darken($color: $white, $amount: 30%);
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+}
