@@ -5,40 +5,54 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.3.0] - 2021-10-20
 
-## [0.1.1] - 2019-09-03
+[0.3.0]: ../../../releases/tag/v0.3.0
 
-### Added
+### Bug Fixes
 
-- New features go here in a bullet list
+- *comps:* Fix `display` weight and `letter-spacing` in card heading ([858821f](858821f241326126fa2ff7bf9dade4e04b9d1f4e))
+- *comps:* Fix link color for good hover contrast ([694058e](694058e5cb75ba2f247083fff73dea5c8f732144))
+- *comps:* Increase tags spacing for mobile devices ([02fa0df](02fa0dfad8f7266ba8eb3a3db8bb2cc5579ebc7a))
+- *comps:* Fix low contrast borders of cards with new auto margin utils ([3564276](35642762572fc71e00b4ef2e250ffc1de4d2f968))
+- *core:* Fix container grid xs screen size to 90vw with minor tweaks ([19970e1](19970e10649296444aefcaf4e3320b6e3b01ee34))
+- *core:* Fix xs container width to 300px ([a6e6af3](a6e6af3e0155f3938022125900c650b10530e270))
+- *core:* Fix navbar `padding` and height issues with 4k viewport ([651a28a](651a28ad1da5856179918e55dc600f024c3dc609))
+- *defaults:* Focus outline showing at unprecedented viewports ([0264acb](0264acb3fca5a9200dcd0f8450708ed25ba87cc3))
+- *defaults:* Fix content styling with formatting of other objects ([db73a31](db73a3131aed3cf32ba8a214dddc0005527b4182))
+- *prefabs:* Change tag from `h4` to `h3` for a11y support ([513e31e](513e31e9fb019b141b0ab53d27f6b8c9c1a5938d))
 
-### Changed
+### Features
 
-- Changes to existing functionality go here in a bullet list
+- *cliff:* Add N3N cliff config file for changelog generation ([1b01641](1b016418d4cafc1b60d37e833300a326436133e6))
+- *comps:* Add alerts with change in mizui unified saturation engine (muse) ([25e9073](25e907363db51fdca95e46c8eb32936989b787af))
+- *comps:* Add responsive navigation bar with hamburgers ([46dc763](46dc763850af04c4babd85cc10932a3b76fb4cfc))
+- *comps:* Add cards from mizui v0.2.5 with spacing classes ([42892ab](42892abe7ff4af3de9f6fe9637a8d17b127ba2ca))
+- *comps:* Add `dropdown` class with mobile viewport support ([684f2a0](684f2a00f340b07148bb401c27fa5a916f53d84b))
+- *comps:* Add outline and arrow button styles with faster transitions ([83df897](83df8973bf0760843030289833d3e4740105becc))
+- *core:* Add rfs mixin from bootstrap along with many small changes ([a0328e7](a0328e74a5b1279e8e497b6dea14c74042f69100))
+- *defaults:* Add typeface classes for global content with navbar gap fix ([199b07e](199b07e7ac51e57871ba3b2a84a7ec8544b1c351))
+- *defaults:* Add content style for pages to improve readability ([b0b4a09](b0b4a09ba9dad0fe93e477782e68c76c22625de2))
+- *prefabs:* Add footer prefabs with footer comps ([94e8828](94e882880ad4da72bad267e361b56a26cf745d56))
+- *prefabs:* Add 404 site prefabs for error pages ([e2c5e98](e2c5e9864753e1efee9198d3830e3a412b260b6c))
+- *prefabs:* Add jumbotron prefabs including its global vars ([9311991](93119919c7ed7768432652234dd218482234b90c))
 
-### Deprecated
+### Improvements
 
-- Mark features soon-to-be removed in a bullet list
+- *app:* Add user specific application components ([7ee1d3f](7ee1d3f3fd61bfc7a0e8429b01de71da3217dbe3))
+- *comps:* Integrate muse in cards along with tag components ([6e9db84](6e9db8436a9631f85906dfaf8ce04f3de3e1e027))
+- *comps:* Update navbar for muse and add navbar dropdowns with a11y fix for cards ([502b25c](502b25cd3c73f9ebfb49e13637606c6f2885e9cd))
+- *core:* Switch to new color palette along with little refactorization ([75aaee8](75aaee89a2f27213516a5da9635cd50ed5d363eb))
+- *core:* Add muse default color config to global variables ([b76da40](b76da406bad76586c0f108b592883f13c4030653))
+- *core:* Optimize mizui grid system for lighter binary sizes ([a603141](a6031410fc5ac32b229df6635a240b435ff6ac2b))
+- *core:* Update `padding` utilities for responsive viewports ([202cd44](202cd4401f33b3a62907380ac3940034e2e94032))
+- *defaults:* Make shortened `font-family` variable names ([d1c015f](d1c015fce63aca7724c952324b66cccf6ab134ed))
+- *mizui:* Update `font-family` vars with change in few things down the road ([69f039f](69f039f3b56af2a7ce7c27db742cb2c0e820ccf6))
+- *prefabs:* Change to ordered headings of hero class in jumbo ([9879d65](9879d65f2c82a0838d296e85d5bbfe50602a0a7c))
 
-### Removed
+### Refactoring Updates
 
-- Features that have been removed in a bullet list
+- *app:* Delete app directory in favor of app specific gitmodules ([fc81664](fc8166454402b35bd5d6798f0c0b94536ed1fca0))
+- *comps:* Refactor comps in favor of global vars with addition of close button ([2c6764d](2c6764d79365a6608d8208fbe002871fcfc67a66))
 
-### Fixed
-
-- Bug fixes in a bullet list
-
-### Security
-
-- Changes/fixes related to security vulnerabilities in a bullet list
-
-## [0.1.0] - 2019-09-02
-
-### Added
-
-- Initial add of the thing
-
-[unreleased]: https://github.com/n3nx/$REPO_NAME/compare/0.1.1...HEAD
-[0.1.1]: https://github.com/n3nx/$REPO_NAME/compare/0.1.0...0.1.1
-[0.1.0]: https://github.com/n3nx/$REPO_NAME/releases/tag/0.1.0
+<!-- CHANGELOG SPLIT MARKER -->
