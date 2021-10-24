@@ -1214,7 +1214,7 @@ $tag-color-scale: $color-scale;
 // Style Config
 $tag-font-size: 66% !default;
 $tag-font-weight: $font-weight-bold !default;
-$tag-padding-y: .35rem !default;
+$tag-padding-y: .35em !default;
 $tag-padding-x: .875em !default;
 $tag-mobile-padding-y: .5rem !default;
 $tag-mobile-padding-x: 1.25em !default;
@@ -1491,12 +1491,12 @@ $bmd-shadow-ambient-opacity: 0.12 !default;
 $info-shadow: 13px 13px 50px -24px;
 
 // opacity
-$default-opacity: rgba(182, 182, 182, .6) !default;
-$primary-opacity: rgba(209, 49, 193, .3) !default;
-$success-opacity: rgba(24, 206, 15, .3) !default;
-$info-opacity: rgba(44, 168, 255, .3) !default;
-$warning-opacity: rgba(255, 178, 54, .3) !default;
-$danger-opacity: rgba(255, 54, 54, .3) !default;
+// $default-opacity: rgba(182, 182, 182, .6) !default;
+// $primary-opacity: rgba(209, 49, 193, .3) !default;
+// $success-opacity: rgba(24, 206, 15, .3) !default;
+// $info-opacity: rgba(44, 168, 255, .3) !default;
+// $warning-opacity: rgba(255, 178, 54, .3) !default;
+// $danger-opacity: rgba(255, 54, 54, .3) !default;
 
 // Icons
 
@@ -1519,14 +1519,13 @@ $margin-base-vertical: 15px !default;
 
 
 // Local docs variables
-$ct-primary: theme-color("primary") !default;
-// $ct-primary-bright: lighten(saturate($ct-primary, 5%), 15%) !default;
-$ct-primary-light: rgba(255, 255, 255, .9) !default;
-$ct-dark: #2a2730 !default;
-$ct-download: #ffe484 !default;
-$ct-info: #5bc0de !default;
-$ct-warning: #f0ad4e !default;
-$ct-danger: #d9534f !default;
-
-$ct-sidebar-bg: #f5f7f9;
-$ct-sidebar-border-color: #e6ecf1;
+// $ct-primary: theme-color("primary") !default;
+// // $ct-primary-bright: lighten(saturate($ct-primary, 5%), 15%) !default;
+// $ct-primary-light: rgba(255, 255, 255, .9) !default;
+// $ct-dark: #2a2730 !default;
+// $ct-download: #ffe484 !default;
+// $ct-info: #5bc0de !default;
+// $ct-warning: #f0ad4e !default;
+// $ct-danger: #d9534f !default;
+// $ct-sidebar-bg: #f5f7f9;
+// $ct-sidebar-border-color: #e6ecf1;
