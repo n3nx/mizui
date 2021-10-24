@@ -10,7 +10,6 @@ h5,
 h6 {
   margin-bottom: $headings-margin-bottom;
   font-family: $headings-font-family;
-  // font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   color: $headings-color;
 }
@@ -64,27 +63,19 @@ h6 {
 
 // Type display classes
 .display-1 {
-  @include font-size($display1-size);
-  font-weight: $display1-weight;
-  line-height: $display-line-height;
+  font: $display1-weight rfs-fluid-value($display1-size)/$display-line-height $font-family-base
 }
 
 .display-2 {
-  @include font-size($display2-size);
-  font-weight: $display2-weight;
-  line-height: $display-line-height;
+  font: $display2-weight rfs-fluid-value($display2-size)/$display-line-height $font-family-base
 }
 
 .display-3 {
-  @include font-size($display3-size);
-  font-weight: $display3-weight;
-  line-height: $display-line-height;
+  font: $display3-weight rfs-fluid-value($display3-size)/$display-line-height $font-family-base
 }
 
 .display-4 {
-  @include font-size($display4-size);
-  font-weight: $display4-weight;
-  line-height: $display-line-height;
+  font: $display4-weight rfs-fluid-value($display4-size)/$display-line-height $font-family-base
 }
 
 //
