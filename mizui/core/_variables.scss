@@ -1190,6 +1190,21 @@ $toast-header-color: $gray-600 !default;
 $toast-header-background-color: rgba($white, .85) !default;
 $toast-header-border-color: rgba(0, 0, 0, .05) !default;
 
+/// Badge
+// Theme Config
+$badge-base-color: $theme-color;
+$badge-bg-scale: $background-scale;
+$badge-color-border-scale: $color-border-scale;
+$badge-color-scale: $color-scale;
+// Style Config
+$badge-padding-y: .375em !default;
+$badge-padding-x: .75em !default;
+$badge-font-weight: $font-weight-bold !default;
+$badge-text-transform: uppercase !default;
+$badge-margin: 5px 10px 5px 0 !default;
+$badge-line-height: 1 !default;
+$badge-border-radius: 10rem !default;
+
 /// Tags
 // Theme Config
 $tag-base-color: $theme-color;

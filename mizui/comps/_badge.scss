@@ -3,23 +3,20 @@
 // Requires one of the contextual, color modifier classes for `color` and
 // `background-color`.
 
+$badge-background: rgba(shift-color($theme-color, 60%), .8);
+$badge-color: $theme-color;
+
 .badge {
   display: inline-block;
   padding: $badge-padding-y $badge-padding-x;
-  @include font-size($badge-font-size);
   font-weight: $badge-font-weight;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
+  line-height: $badge-line-height;
   @include border-radius($badge-border-radius);
-  @include transition($badge-transition);
-
-  @at-root a#{&} {
-    @include hover-focus {
-      text-decoration: none;
-    }
-  }
+  text-transform: $badge-text-transform;
+  margin: $badge-margin;
+  background: $badge-background;
+  color: $badge-color;
+  font-size: 1.1rem;
 
   // Empty badges collapse automatically
   &:empty {
@@ -33,94 +30,49 @@
   top: -1px;
 }
 
-// Pill badges
-//
-// Make them extra rounded with a modifier to replace v3's badges.
+// .badge-circle {
+//   text-align: center;
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   border-radius: 50%;
+//   width: 2rem;
+//   height: 2rem;
+//   font-size: .875rem;
+// }
 
-.badge-pill {
-  padding-right: $badge-pill-padding-x;
-  padding-left: $badge-pill-padding-x;
-  @include border-radius($badge-pill-border-radius);
-}
+// // Multiple inline badges
+// .badge-inline {
+//   margin-right: .625rem;
+// }
 
-// Colors
-//
-// Contextual variations (linked badges get darker on :hover).
+// .badge-inline+span {
+//   top: 2px;
+//   position: relative;
+// }
 
-@each $color,
-$value in $theme-colors {
-  .badge-#{$color} {
-    @include badge-variant($value);
-  }
-}
+// .badge-inline+span>a {
+//   text-decoration: underline;
+// }
 
+// // Sizes
+// .badge-md {
+//   padding: .65em 1em;
+// }
 
-
-.badge {
-  text-transform: $badge-text-transfom;
-
-  a {
-    color: #FFF;
-  }
-}
-
-// Variations
-.badge-pill {
-  padding-right: $badge-pill-padding-x;
-  padding-left: $badge-pill-padding-x;
-}
-
-.badge-circle {
-  text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  font-size: .875rem;
-}
-
-// Multiple inline badges
-.badge-inline {
-  margin-right: .625rem;
-}
-
-.badge-inline+span {
-  top: 2px;
-  position: relative;
-}
-
-.badge-inline+span>a {
-  text-decoration: underline;
-}
-
-// Sizes
-.badge-md {
-  padding: .65em 1em;
-}
-
-.badge-lg {
-  padding: .85em 1.375em;
-}
+// .badge-lg {
+//   padding: .85em 1.375em;
+// }
 
 
-// Color variations
+// .btn {
+//   .badge {
+//     &:not(:first-child) {
+//       margin-left: .5rem;
+//     }
 
-.badge-secondary {
-  color: $gray-800;
-}
-
-// Link badges
-
-.btn {
-  .badge {
-    &:not(:first-child) {
-      margin-left: .5rem;
-    }
-
-    &:not(:last-child) {
-      margin-right: .5rem;
-    }
-  }
-}
+//     &:not(:last-child) {
+//       margin-right: .5rem;
+//     }
+//   }
+// }
