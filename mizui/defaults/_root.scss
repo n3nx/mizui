@@ -19,6 +19,7 @@
   // Use `inspect` for lists so that quoted items keep the quotes.
   // See https://github.com/sass/sass/issues/2383#issuecomment-336349172
   --sans: #{inspect($font-family-sans-serif)};
+  --serif: #{inspect($font-family-serif)};
   --mono: #{inspect($font-family-monospace)};
 
   --body-bg: #{$body-bg};
