@@ -87,8 +87,12 @@ h6 {
   line-height: $display-line-height;
 }
 
+//
+// Font families
+//
+
 .sans {
-  font-family: $font-family-sans-serif; 
+  font-family: $font-family-sans-serif;
 }
 
 .serif {
@@ -99,6 +103,37 @@ h6 {
   font-family: $font-family-monospace;
 }
 
+//
+// Font weights
+//
+
+.bold {
+  font-weight: 700;
+}
+
+.medium {
+  font-weight: 600;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+//
+// Font style
+//
+
+.italic {
+  font-style: italic;
+}
+
+.normal {
+  font-style: normal;
+}
 
 //
 // Horizontal rules
