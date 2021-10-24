@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.1] - 2021-10-24
+
+[0.3.1]: ../../../compare/e796c8965670e778cc349c17a304ee3883a9268c...4f6c0ce5fd501adeb970aa271c1096e050089235
+
+### Bug Fixes
+
+- *comps:* Fix badge rendering with muse coloring ([89d6482](89d6482c7559126bc1ca68cd2b628035cbb25d15))
+
+### Improvements
+
+- *comps:* Refactor alert to optimize close button globally ([47ef0bf](47ef0bf2899a58b29ba43f10cb8aa6cc6d3f8cf6))
+
+### Refactoring Updates
+
+- *core:* Comment unused variables, to be deprecated in future versions ([4f6c0ce](4f6c0ce5fd501adeb970aa271c1096e050089235))
+
+<!-- CHANGELOG SPLIT MARKER -->
 ## [0.3.0] - 2021-10-20
 
 [0.3.0]: ../../../releases/tag/v0.3.0
