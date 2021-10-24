@@ -5,6 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.2] - 2021-10-24
+
+[0.3.2]: ../../../compare/917ed643ddf678d62a24862076e66faa0055ec8d...e3a468025b49c3b7a4989b20fb8317ab8f1ab986
+
+### Features
+
+- *core:* New typography font classes for many font weights and styles ([5fb4edf](5fb4edf4b67e1d0902396ef93d76a0fefc27c1f1))
+
+### Improvements
+
+- *core:* Add strong and em tags to general typography class ([ce1895f](ce1895f59c873b5826dfd2014cffe425b5f3e5d2))
+- *core:* Optimize display classes for  property one-liners ([e3a4680](e3a468025b49c3b7a4989b20fb8317ab8f1ab986))
+- *defaults:* Integrate serif class into typefaces ([a705063](a7050634ad11ca08f20da68cf3f7a05f0f55a6b3))
+
+### Refactoring Updates
+
+- *core:* Remove obsolete bootstrap code and old tooltip design ([9693245](9693245a3128b53b90881c3a16627754cde7e836))
+- *core:* Move misc utilities from other files to ([e53560b](e53560b35f706945ae682a3d57fc09b01deecb14))
+- *defaults:* Move  as  to core ([d8fc7a3](d8fc7a35a875a1da48f344d35bb242a78b101164))
+
+<!-- CHANGELOG SPLIT MARKER -->
+## [0.3.1] - 2021-10-24
+
+[0.3.1]: ../../../compare/e796c8965670e778cc349c17a304ee3883a9268c...917ed643ddf678d62a24862076e66faa0055ec8d
+
+### Bug Fixes
+
+- *comps:* Fix badge rendering with muse coloring ([89d6482](89d6482c7559126bc1ca68cd2b628035cbb25d15))
+
+### Improvements
+
+- *comps:* Refactor alert to optimize close button globally ([47ef0bf](47ef0bf2899a58b29ba43f10cb8aa6cc6d3f8cf6))
+
+### Refactoring Updates
+
+- *core:* Comment unused variables, to be deprecated in future versions ([4f6c0ce](4f6c0ce5fd501adeb970aa271c1096e050089235))
+
+<!-- CHANGELOG SPLIT MARKER -->
 ## [0.3.0] - 2021-10-20
 
 [0.3.0]: ../../../releases/tag/v0.3.0

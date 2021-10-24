@@ -23,7 +23,6 @@ $alert-color: shift-color($alert-base-color, $alert-color-scale);
   border-color: $alert-color-border;
 
   a {
-    // @include alert-variant($alert-background, $alert-border, $alert-color);
     color: shift-color($alert-color, 15%);
     font-weight: $alert-link-font-weight;
 
@@ -32,18 +31,4 @@ $alert-color: shift-color($alert-base-color, $alert-color-scale);
       // color: darken($alert-color, 25%);
     }
   }
-
-  &-dismissible {
-    // padding-right: $alert-dismissible-padding-r;
-
-    // Adjust close link position
-    .close {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: $stretched-link-z-index + 1;
-      padding: $alert-padding-y * 1.25 $alert-padding-x;
-    }
-  }
-
 }

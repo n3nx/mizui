@@ -17,7 +17,7 @@
 // Mizui Core
 @import "mizui/defaults/root";
 @import "mizui/defaults/reboot";
-@import "mizui/defaults/typefaces";
+@import "mizui/core/typography";
 @import "mizui/defaults/content";
 @import "mizui/core/grid";
 @import "mizui/core/spacing";
@@ -33,6 +33,7 @@
 @import "mizui/comps/footer";
 @import "mizui/comps/cards";
 @import "mizui/comps/tags";
+@import "mizui/comps/badge";
 
 // Prefabricated Pluggable Components
 @import "mizui/prefabs/footer";
