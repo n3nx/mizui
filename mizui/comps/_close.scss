@@ -31,17 +31,3 @@ $close-color: shift-color($close-base-color, $close-color-scale);
         transform: rotate(-45deg) translateY(13.5px) translateX(5.5px);
     }
 }
-
-.hidden {
-    opacity: 0;
-    top: 0;
-    right: 0;
-    visibility: hidden;
-    display: none;
-}
-
-.shown {
-    opacity: 100% !important;
-    visibility: visible !important;
-    display: block !important;
-}
