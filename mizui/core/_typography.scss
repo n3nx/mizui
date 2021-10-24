@@ -107,7 +107,8 @@ h6 {
 // Font weights
 //
 
-.bold {
+.bold,
+strong {
   font-weight: 700;
 }
 
@@ -127,7 +128,8 @@ h6 {
 // Font style
 //
 
-.italic {
+.italic,
+em {
   font-style: italic;
 }
 
