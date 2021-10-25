@@ -1,0 +1,16 @@
+{
+  "name": "mizui",
+  "description": "Fast, light and dead simple UI that flows like water.",
+  "version": "0.3.2",
+  "homepage": "https://n3n.org/projects/mizui",
+  "author": "The N3N Contributors",
+  "license": "MIT",
+  "scripts": {
+    "lint": "yarn prettier -w --parser scss .",
+    "pretest": "yarn sass --watch mizui.scss:mizui.css --style compressed"
+  },
+  "devDependencies": {
+    "prettier": "2.4.1",
+    "sass": "1.43.3"
+  }
+}
