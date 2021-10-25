@@ -56,6 +56,14 @@ button {
     background: $btn-background-hover;
     font-style: normal;
   }
+
+  &-lg {
+    padding: 1em 1.5em;
+  }
+
+  &-sm {
+    padding: .375em .75em;
+  }
 }
 
 .btn-outline {
