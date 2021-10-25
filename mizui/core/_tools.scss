@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-.hidden {
+.hide {
     opacity: 0;
     top: 0;
     right: 0;
@@ -17,7 +17,7 @@
     display: none;
 }
 
-.shown {
+.show {
     opacity: 100% !important;
     visibility: visible !important;
     display: block !important;
