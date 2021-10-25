@@ -1,259 +1,257 @@
 // Content
 
 article {
-    color: $white;
-    max-width: 40em;
-    margin: 1em auto;
-    padding: 0 .62em 1em;
-    font: 1.2em/1.62 $font-family-sans-serif;
+  color: $white;
+  max-width: 40em;
+  margin: 1em auto;
+  padding: 0 0.62em 1em;
+  font: 1.2em/1.62 $font-family-sans-serif;
 
-    header {
-        .title {
-            padding: 1em 0 0;
-            font-weight: 400;
-            @include font-size($h1-font-size);
-        }
-
-        .subtitle {
-            color: $gray-300;
-            font: 0.85em/1.75 $font-family-monospace;
-            letter-spacing: -.025em;
-        }
+  header {
+    .title {
+      padding: 1em 0 0;
+      font-weight: 400;
+      @include font-size($h1-font-size);
     }
 
-    p {
-        margin: 1em 0;
+    .subtitle {
+      color: $gray-300;
+      font: 0.85em/1.75 $font-family-monospace;
+      letter-spacing: -0.025em;
+    }
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  > p {
+    &:nth-of-type(1) {
+      border-left: 2px solid $theme-color;
+      padding-left: 1.5rem;
+      margin: 2em 0 1em;
+    }
+  }
+
+  // h1-h6 just to make life easier. Markdown example #...######
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.83em 0;
+    line-height: 1.2;
+    // color: $mizui-color-over-dark;
+
+    &:hover {
+      &::before {
+        content: "\00B6";
+        font-size: 0.9em;
+        margin: -0.2em 0.5em 0 0;
+      }
+    }
+  }
+
+  // em to highlight code. Markdown Example *hello*
+
+  // strong to make text bold. Markdown Example **bold text**
+
+  // pre is for blockcodes. Markdown example ```#include <stdio.h>```
+  pre {
+    padding: 1rem 1.5rem;
+    border-radius: 0.25rem;
+    overflow-x: auto;
+
+    code {
+      font-family: $font-family-monospace;
+      letter-spacing: -0.022em;
+      white-space: pre-wrap;
+      line-height: 1.18;
+    }
+  }
+
+  // hr makes borders between sections. Markdown example ---
+
+  // ul needed for Bullet Points. MD example * *list_name*:List 1
+  ul {
+    li {
+      &::marker {
+        color: $theme-color;
+      }
+    }
+  }
+
+  // ol needed for Numbered Points. MD example 1. *list_name*:List 1
+  ol {
+    li {
+      &::marker {
+        font-family: $font-family-monospace;
+        color: $theme-color;
+      }
+    }
+  }
+
+  // table with contents.
+  table {
+    width: 100%;
+    padding: 1.5rem 0;
+
+    th {
+      padding: $table-head-spacer-y 0;
+      text-transform: $table-head-text-transform;
+      letter-spacing: 3px;
+      border-bottom: 0.125em solid $table-border-color;
+      color: $theme-color;
     }
 
-    >p {
-        &:nth-of-type(1) {
-            border-left: 2px solid $theme-color;
-            padding-left: 1.5rem;
-            margin: 2em 0 1em;
-        }
+    tr td {
+      padding: 0.25em 0;
+      vertical-align: middle;
     }
+  }
 
-    // h1-h6 just to make life easier. Markdown example #...######
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin: .83em 0;
-        line-height: 1.2;
-        // color: $mizui-color-over-dark;
+  img {
+    padding: 0.5rem;
+    @include border-radius(1rem);
 
-        &:hover {
-            &::before {
-                content: '\00B6';
-                font-size: .9em;
-                margin: -.2em .5em 0 0;
-            }
-        }
+    &:hover {
+      border: 0.125em solid $theme-color;
     }
+  }
 
-    // em to highlight code. Markdown Example *hello*
+  $enable-aside: false;
 
-    // strong to make text bold. Markdown Example **bold text**
+  @if $enable-aside {
+    // Information box, available in different colors. Md example: <aside>
+    aside {
+      $aside-theme-color: $primary;
+      background: shift-color($aside-theme-color, 87%);
+      padding: 0.8em 1.2em;
+      margin: 2rem 0;
+      // margin-top: 1.8rem;
+      // margin-bottom: 2rem;
+      border-left: 4px solid $aside-theme-color;
+      color: $aside-theme-color;
+      line-height: 1.4;
+      text-align: center;
+      position: relative;
+      // clear: both;
+      // font-size: $content-font-size;
 
-    // pre is for blockcodes. Markdown example ```#include <stdio.h>```
-    pre {
-        padding: 1rem 1.5rem;
-        border-radius: 0.25rem;
-        overflow-x: auto;
+      &::before {
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        justify-content: center;
+        position: absolute;
+        left: -1.2rem;
+      }
 
-        code {
-            font-family: $font-family-monospace;
-            letter-spacing: -.022em;
-            white-space: pre-wrap;
-            line-height: 1.18;
+      &[data-color="success"] {
+        background: shift-color($success, 87%);
+        border-left: 4px solid $success;
+        color: $success;
+
+        &::before {
+          content: "+";
+          color: $mizui-color;
+          font-size: 1.6rem;
+          font-weight: 700;
+          background: $success;
+          border-radius: 50%;
+          align-items: center;
+          top: -1rem;
         }
+      }
+
+      &[data-color="alert"] {
+        background: rgba($color: $warning, $alpha: 0.13);
+        border-left: 4px solid $warning;
+        color: $warning;
+
+        &::before {
+          content: "!";
+          color: $mizui-color;
+          background: $warning;
+          align-items: flex-end;
+          top: -1rem;
+          font-weight: 700;
+          font-size: 1.5rem;
+          -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+          clip-path: polygon(50% 0, 0 100%, 100% 100%);
+        }
+      }
     }
+  }
 
-    // hr makes borders between sections. Markdown example ---
+  $enable-summary: false;
 
-    // ul needed for Bullet Points. MD example * *list_name*:List 1
-    ul {
-        li {
-            &::marker {
-                color: $theme-color
-            }
-        }
+  @if $enable-summary {
+    // To show notices and bulletin info.
+    summary {
+      margin: 40px 0;
+      padding: 4rem 2rem 0.6rem 2rem;
+      background: shift-color($theme-color, 90%);
+      border-radius: 1rem;
+      position: relative;
+      border-top: 0.25rem dotted $theme-color;
+      clear: both;
+      pointer-events: none;
+
+      h6 {
+        margin-top: 0;
+        font-weight: 400;
+        color: $success;
+        font-family: $font-family-monospace;
+      }
+
+      p {
+        padding-left: 2rem;
+        padding-top: 0.5rem;
+      }
+
+      a {
+        pointer-events: auto;
+      }
+
+      footer {
+        padding-top: 1rem;
+        text-align: right;
+        right: 0.4rem;
+        top: 0.4rem;
+      }
     }
+  }
 
-    // ol needed for Numbered Points. MD example 1. *list_name*:List 1
-    ol {
-        li {
-            &::marker {
-                font-family: $font-family-monospace;
-                color: $theme-color
-            }
-        }
-    }
+  // // Represents filename of code taken from. Md ex <p data-filename>
+  // p[data-filename] {
+  //     font-family: var(--mono);
+  //     color: $tertiary;
+  //     text-align: right;
+  //     margin-bottom: .5em;
+  //     // font-size: 1.1em;
+  //     @include font-size(1.1rem);
 
-    // table with contents.
-    table {
-        width: 100%;
-        padding: 1.5rem 0;
+  //     &::before {
+  //         content: "\2193 \00a0";
+  //         color: $tertiary;
+  //     }
+  // }
 
-        th {
-            padding: $table-head-spacer-y 0;
-            text-transform: $table-head-text-transform;
-            letter-spacing: 3px;
-            border-bottom: .125em solid $table-border-color;
-            color: $theme-color;
-        }
-
-        tr td {
-            padding: 0.25em 0;
-            vertical-align: middle;
-        }
-    }
-
-    img {
-        padding: 0.5rem;
-        @include border-radius(1rem);
-
-        &:hover {
-            border: .125em solid $theme-color;
-        }
-    }
-
-    $enable-aside: false;
-
-    @if $enable-aside {
-
-        // Information box, available in different colors. Md example: <aside>
-        aside {
-            $aside-theme-color: $primary;
-            background: shift-color($aside-theme-color, 87%);
-            padding: 0.8em 1.2em;
-            margin: 2rem 0;
-            // margin-top: 1.8rem;
-            // margin-bottom: 2rem;
-            border-left: 4px solid $aside-theme-color;
-            color: $aside-theme-color;
-            line-height: 1.4;
-            text-align: center;
-            position: relative;
-            // clear: both;
-            // font-size: $content-font-size;
-
-            &::before {
-                width: 35px;
-                height: 35px;
-                display: inline-flex;
-                justify-content: center;
-                position: absolute;
-                left: -1.2rem;
-            }
-
-            &[data-color="success"] {
-                background: shift-color($success, 87%);
-                border-left: 4px solid $success;
-                color: $success;
-
-                &::before {
-                    content: '+';
-                    color: $mizui-color;
-                    font-size: 1.6rem;
-                    font-weight: 700;
-                    background: $success;
-                    border-radius: 50%;
-                    align-items: center;
-                    top: -1rem;
-                }
-            }
-
-            &[data-color="alert"] {
-                background: rgba($color: $warning, $alpha: 0.13);
-                border-left: 4px solid $warning;
-                color: $warning;
-
-                &::before {
-                    content: '!';
-                    color: $mizui-color;
-                    background: $warning;
-                    align-items: flex-end;
-                    top: -1rem;
-                    font-weight: 700;
-                    font-size: 1.5rem;
-                    -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
-                    clip-path: polygon(50% 0, 0 100%, 100% 100%);
-                }
-            }
-        }
-    }
-
-    $enable-summary: false;
-
-    @if $enable-summary {
-
-        // To show notices and bulletin info.
-        summary {
-            margin: 40px 0;
-            padding: 4rem 2rem 0.6rem 2rem;
-            background: shift-color($theme-color, 90%);
-            border-radius: 1rem;
-            position: relative;
-            border-top: 0.25rem dotted $theme-color;
-            clear: both;
-            pointer-events: none;
-
-            h6 {
-                margin-top: 0;
-                font-weight: 400;
-                color: $success;
-                font-family: $font-family-monospace;
-            }
-
-            p {
-                padding-left: 2rem;
-                padding-top: .5rem;
-            }
-
-            a {
-                pointer-events: auto;
-            }
-
-            footer {
-                padding-top: 1rem;
-                text-align: right;
-                right: .4rem;
-                top: .4rem;
-            }
-        }
-    }
-
-    // // Represents filename of code taken from. Md ex <p data-filename>
-    // p[data-filename] {
-    //     font-family: var(--mono);
-    //     color: $tertiary;
-    //     text-align: right;
-    //     margin-bottom: .5em;
-    //     // font-size: 1.1em;
-    //     @include font-size(1.1rem);
-
-    //     &::before {
-    //         content: "\2193 \00a0";
-    //         color: $tertiary;
-    //     }
-    // }
-
-    // // Centers the text. Represents short line quotes. Md ex <p data-center>
+  // // Centers the text. Represents short line quotes. Md ex <p data-center>
 }
 
 // Footnotes section.
 .footnote-reference {
-    margin: .25em;
+  margin: 0.25em;
 }
 
 .footnote-definition {
-    display: inline-flex;
-    @include font-size(1rem);
+  display: inline-flex;
+  @include font-size(1rem);
 
-    sup {
-        color: $mizui-background;
-    }
+  sup {
+    color: $mizui-background;
+  }
 }

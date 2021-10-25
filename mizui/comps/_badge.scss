@@ -3,7 +3,7 @@
 // Requires one of the contextual, color modifier classes for `color` and
 // `background-color`.
 
-$badge-background: rgba(shift-color($theme-color, 60%), .8);
+$badge-background: rgba(shift-color($theme-color, 60%), 0.8);
 $badge-color: $theme-color;
 
 .badge {
@@ -63,7 +63,6 @@ $badge-color: $theme-color;
 // .badge-lg {
 //   padding: .85em 1.375em;
 // }
-
 
 // .btn {
 //   .badge {

@@ -1,48 +1,46 @@
-
 // Select Color
 ::-moz-selection {
-    /* Code for Firefox */
-    color: $gray-200;
-    border-radius: $border-radius;
-  
-    margin {
-      right: 0.5rem;
-      left: 0.5rem;
-    }
-  
-    background: {
-      image: initial;
-      position-x: initial;
-      position-y: initial;
-      size: initial;
-      attachment: initial;
-      origin: initial;
-      clip: initial;
-      color: rgba($secondary, 0.59);
-    }
+  /* Code for Firefox */
+  color: $gray-200;
+  border-radius: $border-radius;
+
+  margin {
+    right: 0.5rem;
+    left: 0.5rem;
   }
-  
-  ::selection {
-    color: $white;
-    border-radius: $border-radius;
-  
-    margin {
-      right: 0.5rem;
-      left: 0.5rem;
-    }
-  
-    background: {
-      image: initial;
-      position-x: initial;
-      position-y: initial;
-      size: initial;
-      attachment: initial;
-      origin: initial;
-      clip: initial;
-      // color: transparentize($color: #{$secondary}, $amount: 10);
-      color: rgba($ncrypto-blau-darker, 0.99) !important;
-    }
-  
-    // background-color: rgba(0, 85, 255, 0.992157);
+
+  background: {
+    image: initial;
+    position-x: initial;
+    position-y: initial;
+    size: initial;
+    attachment: initial;
+    origin: initial;
+    clip: initial;
+    color: rgba($secondary, 0.59);
   }
-  
+}
+
+::selection {
+  color: $white;
+  border-radius: $border-radius;
+
+  margin {
+    right: 0.5rem;
+    left: 0.5rem;
+  }
+
+  background: {
+    image: initial;
+    position-x: initial;
+    position-y: initial;
+    size: initial;
+    attachment: initial;
+    origin: initial;
+    clip: initial;
+    // color: transparentize($color: #{$secondary}, $amount: 10);
+    color: rgba($ncrypto-blau-darker, 0.99) !important;
+  }
+
+  // background-color: rgba(0, 85, 255, 0.992157);
+}

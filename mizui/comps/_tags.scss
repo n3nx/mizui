@@ -6,7 +6,11 @@ $tag-color-border: shift-color($tag-base-color, $tag-color-border-scale);
 $tag-color: shift-color($tag-base-color, $tag-color-scale);
 
 @if (contrast-ratio($tag-background, $tag-color) < $min-contrast-ratio) {
-  $tag-color: mix($tag-base-color, color-contrast($tag-background, white, black, $min-contrast-ratio), abs($tag-bg-scale));
+  $tag-color: mix(
+    $tag-base-color,
+    color-contrast($tag-background, white, black, $min-contrast-ratio),
+    abs($tag-bg-scale)
+  );
 }
 
 .tag {
@@ -28,14 +32,14 @@ $tag-color: shift-color($tag-base-color, $tag-color-scale);
 
   &:hover {
     &:before {
-      content: '#';
+      content: "#";
     }
 
     color: $tag-color !important;
   }
 }
 
-@include media-breakpoint-down('lg') {
+@include media-breakpoint-down("lg") {
   .tag {
     padding: $tag-mobile-padding-y $tag-mobile-padding-x;
     margin: $tag-mobile-margin;

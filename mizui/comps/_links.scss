@@ -5,9 +5,17 @@ $link-color: shift-color($link-base-color, 0%);
 $link-hover-color: shift-color($link-base-color, -20%);
 
 @if (contrast-ratio($body-bg, $link-color) < $min-contrast-ratio) {
-  $link-color: mix($link-base-color, color-contrast($body-bg, $link-color, $link-hover-color, $min-contrast-ratio), abs(10%));
+  $link-color: mix(
+    $link-base-color,
+    color-contrast(
+      $body-bg,
+      $link-color,
+      $link-hover-color,
+      $min-contrast-ratio
+    ),
+    abs(10%)
+  );
 }
-
 
 a {
   color: $link-color;

@@ -1,9 +1,9 @@
 @mixin inversion($level) {
-    -webkit-filter: invert($level) !important;
-    filter: invert($level) !important;
+  -webkit-filter: invert($level) !important;
+  filter: invert($level) !important;
 }
 
 @mixin backdrop-blur($level) {
-    -webkit-backdrop-filter: blur($level);
-    backdrop-filter: blur($level);
+  -webkit-backdrop-filter: blur($level);
+  backdrop-filter: blur($level);
 }

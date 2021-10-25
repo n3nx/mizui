@@ -1,23 +1,23 @@
 .e404 {
-    text-align: center;
-    margin: 1em 0 3em;
+  text-align: center;
+  margin: 1em 0 3em;
 
-    h1 {
-        @include font-size(10rem);
-        color: $danger;
-        animation: blinker 2s ease infinite;
-        transition: color .5s ease;
-        font-weight: 400;
+  h1 {
+    @include font-size(10rem);
+    color: $danger;
+    animation: blinker 2s ease infinite;
+    transition: color 0.5s ease;
+    font-weight: 400;
 
-        &:hover {
-            font-style: normal;
-            color: $theme-color;
-        }
+    &:hover {
+      font-style: normal;
+      color: $theme-color;
     }
+  }
 }
 
 @keyframes blinker {
-    50% {
-        opacity: .6;
-    }
+  50% {
+    opacity: 0.6;
+  }
 }

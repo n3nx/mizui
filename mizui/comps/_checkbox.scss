@@ -1,35 +1,35 @@
 // Checkbox
 
 .checkbox {
-    position: relative;
-    user-select: none;
-    margin-bottom: 10px;
+  position: relative;
+  user-select: none;
+  margin-bottom: 10px;
 
-    label {
-        cursor: pointer;
-        font-weight: 500;
-        padding-left: 30px;
+  label {
+    cursor: pointer;
+    font-weight: 500;
+    padding-left: 30px;
+  }
+
+  span.box {
+    border-radius: $border-radius;
+    // border: 1px solid $border-color;
+    background: $mizui-background;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 0;
+
+    @extend .ok;
+
+    &::before,
+    &::after {
+      @extend .hide;
     }
+  }
 
-    span.box {
-        border-radius: $border-radius;
-        // border: 1px solid $border-color;
-        background: $mizui-background;
-        width: 22px;
-        height: 22px;
-        position: absolute;
-        left: 0;
-
-        @extend .ok;
-
-        &::before,
-        &::after {
-            @extend .hide;
-        }
-    }
-
-    input:checked~label .box::after,
-    input:checked~label .box::before {
-        @extend .show;
-    }
+  input:checked ~ label .box::after,
+  input:checked ~ label .box::before {
+    @extend .show;
+  }
 }

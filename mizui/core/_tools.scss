@@ -2,29 +2,29 @@
 
 // For blurring things up
 .backdrop {
-    @include backdrop-blur($navbar-blur-radius);
+  @include backdrop-blur($navbar-blur-radius);
 }
 
 .text-align-center {
-    text-align: center;
+  text-align: center;
 }
 
 .hide {
-    opacity: 0;
-    visibility: hidden;
-    display: none;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
 }
 
 .show {
-    opacity: 100% !important;
-    visibility: visible !important;
-    display: block !important;
+  opacity: 100% !important;
+  visibility: visible !important;
+  display: block !important;
 }
 
 .trans {
-    color: inherit !important;
+  color: inherit !important;
 
-    &:hover {
-        font-style: normal;
-    }
+  &:hover {
+    font-style: normal;
+  }
 }

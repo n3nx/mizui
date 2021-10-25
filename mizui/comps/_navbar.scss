@@ -2,13 +2,25 @@
 // Huge inspiration from https://www.aleksandrhovhannisyan.com/blog/responsive-navbar-without-bootstrap/
 
 // Local Variables
-$navbar-background: rgba(shift-color($navlink-base-color, $navbar-bg-scale), 0.6);
+$navbar-background: rgba(
+  shift-color($navlink-base-color, $navbar-bg-scale),
+  0.6
+);
 $navlink-background: shift-color($navlink-base-color, $navlink-bg-scale);
-$navlink-color-border: shift-color($navlink-base-color, $navlink-color-border-scale);
+$navlink-color-border: shift-color(
+  $navlink-base-color,
+  $navlink-color-border-scale
+);
 $navlink-color: shift-color($navlink-base-color, $navlink-color-scale);
 
-@if (contrast-ratio($navlink-background, $navlink-color) < $min-contrast-ratio) {
-  $navlink-color: mix($navlink-base-color, color-contrast($navlink-background, white, black, $min-contrast-ratio), abs($navlink-bg-scale));
+@if (
+  contrast-ratio($navlink-background, $navlink-color) < $min-contrast-ratio
+) {
+  $navlink-color: mix(
+    $navlink-base-color,
+    color-contrast($navlink-background, white, black, $min-contrast-ratio),
+    abs($navlink-bg-scale)
+  );
 }
 
 .navbar {
@@ -104,7 +116,6 @@ $navlink-color: shift-color($navlink-base-color, $navlink-color-scale);
   background-color: $navlink-color;
 }
 
-
 .navbar.opened .navbar-toggler .icon-bar:first-child,
 .navbar.opened .navbar-toggler .icon-bar:last-child {
   position: absolute;
@@ -124,7 +135,7 @@ $navlink-color: shift-color($navlink-base-color, $navlink-color-scale);
   transform: rotate(-45deg);
 }
 
-@include media-breakpoint-down('md') {
+@include media-breakpoint-down("md") {
   .navbar-toggler {
     display: flex;
   }

@@ -12,7 +12,11 @@ $btn-outline-bg: transparent;
 $btn-arrow-bg: transparent;
 
 @if (contrast-ratio($btn-background, $btn-color) < $min-contrast-ratio) {
-  $btn-color: mix($btn-base-color, color-contrast($btn-background, white, black, $min-contrast-ratio), abs($btn-bg-scale));
+  $btn-color: mix(
+    $btn-base-color,
+    color-contrast($btn-background, white, black, $min-contrast-ratio),
+    abs($btn-bg-scale)
+  );
 }
 
 .btn,
@@ -32,7 +36,7 @@ button {
   // line-height: $input-btn-line-height;
   line-height: $btn-line-height;
   border-radius: $btn-border-radius;
-  transition: all .13s ease;
+  transition: all 0.13s ease;
 
   //Btn Content format
   position: relative;
@@ -62,7 +66,7 @@ button {
   }
 
   &-sm {
-    padding: .375em .75em;
+    padding: 0.375em 0.75em;
   }
 }
 
@@ -82,15 +86,15 @@ button {
   text-align: left;
 
   &::after {
-    content: '\2192';
-    margin-left: .25em;
+    content: "\2192";
+    margin-left: 0.25em;
   }
 
   &:hover {
     transform: none;
 
     &::after {
-      margin-left: .5em;
+      margin-left: 0.5em;
     }
   }
 }

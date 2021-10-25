@@ -4,53 +4,53 @@ $padding-default: $spacer * 1.25;
 $margin-default: $spacer * 1.5;
 
 .pt {
-    @include padding-top($padding-default);
+  @include padding-top($padding-default);
 }
 
 .pb {
-    @include padding-bottom($padding-default);
+  @include padding-bottom($padding-default);
 }
 
 .pl {
-    @include padding-left($padding-default);
+  @include padding-left($padding-default);
 }
 
 .pr {
-    @include padding-right($padding-default);
+  @include padding-right($padding-default);
 }
 
 .px {
-    @include padding-left($padding-default);
-    @include padding-right($padding-default);
+  @include padding-left($padding-default);
+  @include padding-right($padding-default);
 }
 
 .py {
-    @include padding-top($padding-default);
-    @include padding-bottom($padding-default);
+  @include padding-top($padding-default);
+  @include padding-bottom($padding-default);
 }
 
 .mt {
-    @include margin-top($margin-default);
+  @include margin-top($margin-default);
 }
 
 .mb {
-    @include margin-bottom($margin-default);
+  @include margin-bottom($margin-default);
 }
 
 .ml {
-    @include margin-left($margin-default);
+  @include margin-left($margin-default);
 }
 
 .mr {
-    @include margin-right($margin-default);
+  @include margin-right($margin-default);
 }
 
 .mx {
-    @include margin-left($margin-default);
-    @include margin-right($margin-default);
+  @include margin-left($margin-default);
+  @include margin-right($margin-default);
 }
 
 .my {
-    @include margin-top($margin-default);
-    @include margin-bottom($margin-default);
+  @include margin-top($margin-default);
+  @include margin-bottom($margin-default);
 }

@@ -2,64 +2,71 @@
 
 // Local Variables
 $card-background: shift-color($card-base-color, $card-bg-scale);
-$card-color-head-border: shift-color($card-base-color, $card-color-head-border-scale);
+$card-color-head-border: shift-color(
+  $card-base-color,
+  $card-color-head-border-scale
+);
 $card-color: shift-color($card-base-color, $card-color-scale);
 
 @if (contrast-ratio($card-background, $card-color) < $min-contrast-ratio) {
-    $card-color: mix($card-base-color, color-contrast($card-background, white, black, $min-contrast-ratio), abs($card-bg-scale));
+  $card-color: mix(
+    $card-base-color,
+    color-contrast($card-background, white, black, $min-contrast-ratio),
+    abs($card-bg-scale)
+  );
 }
 
 .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    // background-color: $card-bg;
-    // backdrop-filter: blur($navbar-blur-radius);
-    background-clip: border-box;
-    border: $card-border-width solid $card-border-color;
-    border-radius: $card-border-radius;
-    transition: $card-transition;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  // background-color: $card-bg;
+  // backdrop-filter: blur($navbar-blur-radius);
+  background-clip: border-box;
+  border: $card-border-width solid $card-border-color;
+  border-radius: $card-border-radius;
+  transition: $card-transition;
 
-    .head {
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        padding-top: 1rem;
+  .head {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
 
-        .emoji {
-            border: $card-border-width solid $card-color-head-border;
-            border-radius: 50%;
-            padding: .5rem;
-            font-size: 2.5rem;
-        }
+    .emoji {
+      border: $card-border-width solid $card-color-head-border;
+      border-radius: 50%;
+      padding: 0.5rem;
+      font-size: 2.5rem;
+    }
+  }
+
+  .body {
+    flex: 1 1 auto;
+    padding: 1.5rem;
+
+    h1 {
+      font-size: 1.5rem;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5em;
+      font-family: $font-family-monospace;
     }
 
-    .body {
-        flex: 1 1 auto;
-        padding: 1.5rem;
-
-        h1 {
-            font-size: 1.5rem;
-            letter-spacing: -.025em;
-            margin-bottom: .5em;
-            font-family: $font-family-monospace;
-        }
-
-        p {
-            font-size: 1rem;
-            padding: .35rem 0;
-            line-height: 1.75;
-        }
+    p {
+      font-size: 1rem;
+      padding: 0.35rem 0;
+      line-height: 1.75;
     }
+  }
 
-    .foot {
-        text-align: center;
-        padding: 0 1.5rem 1.25rem;
-    }
+  .foot {
+    text-align: center;
+    padding: 0 1.5rem 1.25rem;
+  }
 
-    &:hover {
-        transform: translateY(-2%);
-    }
+  &:hover {
+    transform: translateY(-2%);
+  }
 }

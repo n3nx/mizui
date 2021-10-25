@@ -5,54 +5,58 @@ $jumbo-background: shift-color($jumbo-base-color, $jumbo-bg-scale);
 $jumbo-color: shift-color($jumbo-base-color, $jumbo-color-scale);
 
 @if (contrast-ratio($jumbo-background, $jumbo-color) < $min-contrast-ratio) {
-    $jumbo-color: mix($jumbo-base-color, color-contrast($jumbo-background, white, black, $min-contrast-ratio), abs($jumbo-bg-scale));
+  $jumbo-color: mix(
+    $jumbo-base-color,
+    color-contrast($jumbo-background, white, black, $min-contrast-ratio),
+    abs($jumbo-bg-scale)
+  );
 }
 
 .hero {
-    @include padding(8em .5em);
+  @include padding(8em 0.5em);
+  text-align: center;
+  background: $jumbo-background;
+
+  h1,
+  h2,
+  h3 {
+    @extend .display-2;
+    // color: $jumbo-color;
+  }
+
+  h3 {
+    @extend .display-4;
+    // @include margin(1em 0 0);
+  }
+
+  p {
+    padding-top: 1em;
+    @include font-size(1.5rem);
+  }
+
+  .links {
+    padding-top: 1.5rem;
     text-align: center;
-    background: $jumbo-background;
 
-    h1,
-    h2,
-    h3 {
-        @extend .display-2;
-        // color: $jumbo-color;
+    a {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 1.5rem;
     }
-
-    h3 {
-        @extend .display-4;
-        // @include margin(1em 0 0);
-    }
-
-    p {
-        padding-top: 1em;
-        @include font-size(1.5rem);
-    }
-
-    .links {
-        padding-top: 1.5rem;
-        text-align: center;
-
-        a {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 1.5rem;
-        }
-    }
+  }
 }
 
 .torso {
-    background: linear-gradient(180deg, $jumbo-background 0%, #000000 100%);
+  background: linear-gradient(180deg, $jumbo-background 0%, #000000 100%);
 
-    .buckt {
-        width: 75vw;
-        margin: auto auto;
-    }
+  .buckt {
+    width: 75vw;
+    margin: auto auto;
+  }
 }
 
 @include media-breakpoint-down("md") {
-    .buckt {
-        width: 95vw !important;
-    }
+  .buckt {
+    width: 95vw !important;
+  }
 }

@@ -1,164 +1,162 @@
 .container-fluid,
 .container {
-    width: 80vw;
-    margin-right: auto;
-    margin-left: auto;
+  width: 80vw;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container-fluid {
-    padding-right: var($outer-margin, 2rem);
-    padding-left: var($outer-margin, 2rem);
+  padding-right: var($outer-margin, 2rem);
+  padding-left: var($outer-margin, 2rem);
 }
 
 .row {
-    box-sizing: border-box;
-    display: flex;
-    flex: 0 1 auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-right: var($grid-gutter-compensation, -0.5rem);
-    margin-left: var($grid-gutter-compensation, -0.5rem);
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: var($grid-gutter-compensation, -0.5rem);
+  margin-left: var($grid-gutter-compensation, -0.5rem);
 }
 
 .row.reverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .col.reverse {
-    flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .col.expand {
-    // flex-grow: 1;
-    // flex-basis: 0;
-    flex: 1 0;
-    max-width: 100%;
+  // flex-grow: 1;
+  // flex-basis: 0;
+  flex: 1 0;
+  max-width: 100%;
 }
 
 @for $i from 1 through $grid-columns {
-    .col-xs-#{$i} {
-        // flex-basis: percentage(divide($i, $grid-columns));
-        width: percentage(divide($i, $grid-columns));
-    }
+  .col-xs-#{$i} {
+    // flex-basis: percentage(divide($i, $grid-columns));
+    width: percentage(divide($i, $grid-columns));
+  }
 }
 
 @for $i from 0 through $grid-off {
-    .col-xs-o-#{$i} {
-        margin-left: percentage(divide($i, $grid-columns));
-    }
+  .col-xs-o-#{$i} {
+    margin-left: percentage(divide($i, $grid-columns));
+  }
 }
 
 @if $enable-grid-attributes {
-    .start-xs {
-        justify-content: flex-start;
-        text-align: start;
-    }
+  .start-xs {
+    justify-content: flex-start;
+    text-align: start;
+  }
 
-    .center-xs {
-        justify-content: center;
-        text-align: center;
-    }
+  .center-xs {
+    justify-content: center;
+    text-align: center;
+  }
 
-    .end-xs {
-        justify-content: flex-end;
-        text-align: end;
-    }
+  .end-xs {
+    justify-content: flex-end;
+    text-align: end;
+  }
 
-    .top-xs {
-        align-items: flex-start;
-    }
+  .top-xs {
+    align-items: flex-start;
+  }
 
-    .middle-xs {
-        align-items: center;
-    }
+  .middle-xs {
+    align-items: center;
+  }
 
-    .bottom-xs {
-        align-items: flex-end;
-    }
+  .bottom-xs {
+    align-items: flex-end;
+  }
 
-    .around-xs {
-        justify-content: space-around;
-    }
+  .around-xs {
+    justify-content: space-around;
+  }
 
-    .between-xs {
-        justify-content: space-between;
-    }
+  .between-xs {
+    justify-content: space-between;
+  }
 
-    .first-xs {
-        order: -1;
-    }
+  .first-xs {
+    order: -1;
+  }
 
-    .last-xs {
-        order: 1;
-    }
+  .last-xs {
+    order: 1;
+  }
 }
 
-@each $scrsize,
-$scrwidth in $container-max-widths {
-
-    @include media-breakpoint-up($scrsize) {
-        .container {
-            width: $scrwidth;
-        }
-
-        @for $i from 1 through $grid-columns {
-            .col-#{$scrsize}-#{$i} {
-                // flex-basis: percentage(divide($i, $grid-columns));
-                width: percentage(divide($i, $grid-columns));
-            }
-        }
-
-        @if $enable-grid-offsets {
-            @for $i from 0 through $grid-off {
-                .col-#{$scrsize}-o-#{$i} {
-                    margin-left: percentage(divide($i, $grid-columns));
-                }
-            }
-        }
-
-        @if $enable-grid-attributes {
-            .start-#{$scrsize} {
-                justify-content: flex-start;
-                text-align: start;
-            }
-
-            .center-#{$scrsize} {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .end-#{$scrsize} {
-                justify-content: flex-end;
-                text-align: end;
-            }
-
-            .top-#{$scrsize} {
-                align-items: flex-start;
-            }
-
-            .middle-#{$scrsize} {
-                align-items: center;
-            }
-
-            .bottom-#{$scrsize} {
-                align-items: flex-end;
-            }
-
-            .around-#{$scrsize} {
-                justify-content: space-around;
-            }
-
-            .between-#{$scrsize} {
-                justify-content: space-between;
-            }
-
-            .first-#{$scrsize} {
-                order: -1;
-            }
-
-            .last-#{$scrsize} {
-                order: 1;
-            }
-        }
+@each $scrsize, $scrwidth in $container-max-widths {
+  @include media-breakpoint-up($scrsize) {
+    .container {
+      width: $scrwidth;
     }
+
+    @for $i from 1 through $grid-columns {
+      .col-#{$scrsize}-#{$i} {
+        // flex-basis: percentage(divide($i, $grid-columns));
+        width: percentage(divide($i, $grid-columns));
+      }
+    }
+
+    @if $enable-grid-offsets {
+      @for $i from 0 through $grid-off {
+        .col-#{$scrsize}-o-#{$i} {
+          margin-left: percentage(divide($i, $grid-columns));
+        }
+      }
+    }
+
+    @if $enable-grid-attributes {
+      .start-#{$scrsize} {
+        justify-content: flex-start;
+        text-align: start;
+      }
+
+      .center-#{$scrsize} {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .end-#{$scrsize} {
+        justify-content: flex-end;
+        text-align: end;
+      }
+
+      .top-#{$scrsize} {
+        align-items: flex-start;
+      }
+
+      .middle-#{$scrsize} {
+        align-items: center;
+      }
+
+      .bottom-#{$scrsize} {
+        align-items: flex-end;
+      }
+
+      .around-#{$scrsize} {
+        justify-content: space-around;
+      }
+
+      .between-#{$scrsize} {
+        justify-content: space-between;
+      }
+
+      .first-#{$scrsize} {
+        order: -1;
+      }
+
+      .last-#{$scrsize} {
+        order: 1;
+      }
+    }
+  }
 }
