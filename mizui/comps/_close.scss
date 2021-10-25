@@ -42,6 +42,7 @@ $close-color: shift-color($close-base-color, $close-color-scale);
         height: rfs-fluid-value(1rem);
         border-radius: 3em;
         background: $close-color;
+        @extend .hide;
     }
 
     &::after {

@@ -25,6 +25,6 @@
 
     input:checked~label .box::after,
     input:checked~label .box::before {
-        display: none;
+        @extend .show;
     }
 }
