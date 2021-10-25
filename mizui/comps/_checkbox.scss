@@ -21,6 +21,11 @@
         left: 0;
 
         @extend .ok;
+
+        &::before,
+        &::after {
+            @extend .hide;
+        }
     }
 
     input:checked~label .box::after,
