@@ -8,7 +8,7 @@ $close-color: shift-color($close-base-color, $close-color-scale);
     $close-color: mix($close-base-color, color-contrast($close-background, white, black, $min-contrast-ratio), abs($close-bg-scale));
 }
 
-.close {
+.no {
 
     &::before,
     &::after {
