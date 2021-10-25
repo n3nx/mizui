@@ -31,3 +31,25 @@ $close-color: shift-color($close-base-color, $close-color-scale);
         transform: rotate(-45deg) translateY(13.5px) translateX(5.5px);
     }
 }
+
+.ok {
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: rfs-fluid-value(1rem);
+        border-radius: 3em;
+        background: $close-color;
+    }
+
+    &::after {
+        height: 8px;
+        transform: rotate(-45deg) translateY(10px) translateX(-4px) scale(1);
+    }
+
+    &::before {
+        transform: rotate(45deg) translateY(-5px) translateX(10px) scale(1);
+    }
+}
