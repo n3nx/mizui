@@ -54,3 +54,11 @@ $margin-default: $spacer * 1.5;
   @include margin-top($margin-default);
   @include margin-bottom($margin-default);
 }
+
+.mn {
+  margin: 0
+}
+
+.pn {
+  padding: 0
+}
