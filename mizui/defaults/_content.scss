@@ -97,19 +97,29 @@ article {
   // table with contents.
   table {
     width: 100%;
-    padding: 1.5rem 0;
+    // padding: 1.5rem 0;
+    overflow-x: scroll;
+    @include border-radius(1rem);
+    background: $mizui-color;
 
-    th {
-      padding: $table-head-spacer-y 0;
+    th,
+    thead {
+      padding: $table-head-spacer-y $table-head-spacer-x;
       text-transform: $table-head-text-transform;
       letter-spacing: 3px;
       border-bottom: 0.125em solid $table-border-color;
       color: $theme-color;
+      text-align: left;
     }
 
     tr td {
-      padding: 0.25em 0;
-      vertical-align: middle;
+      // vertical-align: middle;
+      text-align: left;
+      padding: 1.25em 0.95em;
+    }
+
+    tbody tr:nth-child(2n) {
+      background: darken($color: $cyan, $amount: 40);
     }
   }
 
