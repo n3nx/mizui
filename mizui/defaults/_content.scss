@@ -15,9 +15,17 @@ article {
     }
 
     .subtitle {
-      color: $gray-300;
       font: 0.85em/1.75 $font-family-monospace;
-      letter-spacing: -0.025em;
+      // letter-spacing: -0.025em;
+      img {
+        border-radius: 0;
+        padding: .35em;
+        opacity: .6;
+        border: none;
+      }
+      span {
+        align-self: center;
+      }
     }
   }
 
